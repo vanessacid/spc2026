@@ -341,6 +341,13 @@ textarea{resize:vertical;min-height:80px;}
 footer{background:#0D0020;text-align:center;padding:32px 40px;color:rgba(255,255,255,0.4);font-size:0.85rem;}
 footer strong{color:var(--rosa);}
 
+
+/* ─── CHECKBOXES TIEMPO ─── */
+.check-group{display:flex;flex-direction:column;gap:8px;margin-top:6px;}
+.check-opt{display:flex;align-items:center;gap:12px;font-family:var(--font);font-weight:600;font-size:0.9rem;color:var(--text);cursor:pointer;padding:11px 16px;border-radius:12px;border:2px solid #EDE0F5;transition:border-color 0.2s,background 0.2s;}
+.check-opt:hover{border-color:var(--rosa);background:#FFF0FB;}
+.check-opt input[type=checkbox]{width:18px;height:18px;accent-color:var(--rosa);flex-shrink:0;}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
@@ -507,12 +514,16 @@ footer strong{color:var(--rosa);}
             <input type="text" id="f_nombre" placeholder="Nombre y apellido completo" required>
           </div>
           <div class="fg">
-            <label>Edad *</label>
-            <input type="number" id="f_edad" min="4" max="14" placeholder="4 a 14 años" required>
+            <label>Cédula</label>
+            <input type="text" id="f_cedula" placeholder="Número de cédula">
           </div>
           <div class="fg">
             <label>Fecha de nacimiento *</label>
             <input type="date" id="f_nacimiento" required>
+          </div>
+          <div class="fg">
+            <label>Edad *</label>
+            <input type="number" id="f_edad" min="4" max="14" placeholder="4 a 14 años" required>
           </div>
         </div>
 
@@ -523,59 +534,77 @@ footer strong{color:var(--rosa);}
             <input type="text" id="f_representante" placeholder="Nombre y apellido" required>
           </div>
           <div class="fg">
-            <label>Teléfono de contacto *</label>
-            <input type="tel" id="f_telefono" placeholder="0412-XXXXXXX" required>
-          </div>
-          <div class="fg">
             <label>Correo electrónico *</label>
             <input type="email" id="f_correo" placeholder="correo@ejemplo.com" required>
+          </div>
+          <div class="fg">
+            <label>Teléfono 1 *</label>
+            <input type="tel" id="f_telefono1" placeholder="0412-XXXXXXX" required>
+          </div>
+          <div class="fg">
+            <label>Teléfono 2</label>
+            <input type="tel" id="f_telefono2" placeholder="0412-XXXXXXX">
           </div>
         </div>
 
         <div class="fsec">🏛️ Hermandad Gallega</div>
-        <div class="fg full">
-          <label>¿La familia es socia de la Hermandad Gallega? *</label>
-          <div class="radio-group">
-            <label class="radio-opt"><input type="radio" name="socio" value="Si" required onchange="toggle('socio-num',true);toggle('no-socio',false)"> Sí, somos socios</label>
-            <label class="radio-opt"><input type="radio" name="socio" value="No" onchange="toggle('socio-num',false);toggle('no-socio',true)"> No somos socios</label>
+        <div class="fgrid">
+          <div class="fg full">
+            <label>¿Son socios de la Hermandad Gallega? *</label>
+            <select id="f_socios" required>
+              <option value="">Selecciona</option>
+              <option>Sí, somos socios</option>
+              <option>No somos socios</option>
+            </select>
           </div>
-          <div class="conditional" id="socio-num">
-            <label>Número de socio</label>
+          <div class="fg">
+            <label>Nº de socio (si aplica)</label>
             <input type="text" id="f_num_socio" placeholder="Número de socio">
           </div>
-          <div class="conditional" id="no-socio">
-            <p style="font-family:var(--font);font-weight:700;font-size:0.85rem;color:var(--muted);margin-bottom:10px;">Se aplicará un cargo adicional de Ref. 20 por no ser socios de la Hermandad Gallega.</p>
+        </div>
+
+        <div class="fsec">📅 ¿Qué semanas asistirá? * <span style="font-weight:400;color:var(--muted)">(puedes marcar varias)</span></div>
+        <div class="fgrid">
+          <div class="fg full">
+            <div class="check-group" id="tiempo-checks">
+              <label class="check-opt"><input type="checkbox" name="tiempo" value="🌟 Pretemporada (3 al 7 de agosto)" checked> 🌟 Pretemporada (3 al 7 de agosto)</label>
+              <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 1 (10 al 14 de agosto)"> Semana 1 (10 al 14 de agosto)</label>
+              <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 2 (17 al 21 de agosto)"> Semana 2 (17 al 21 de agosto)</label>
+              <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 3 (24 al 28 de agosto)"> Semana 3 (24 al 28 de agosto)</label>
+              <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 4 (1 al 4 de septiembre)"> Semana 4 (1 al 4 de septiembre)</label>
+              <label class="check-opt"><input type="checkbox" name="tiempo" value="Temporada completa (4 semanas)"> ⭐ Temporada completa (4 semanas)</label>
+            </div>
           </div>
         </div>
 
-        <div class="fsec">⚕️ Información médica</div>
-        <div class="fg full">
-          <label>¿La participante tiene alguna alergia, condición médica o requerimiento especial?</label>
-          <div class="radio-group">
-            <label class="radio-opt"><input type="radio" name="alergia" value="No" required onchange="toggle('alergia-det',false)"> No</label>
-            <label class="radio-opt"><input type="radio" name="alergia" value="Si" onchange="toggle('alergia-det',true)"> Sí</label>
-          </div>
-          <div class="conditional" id="alergia-det">
-            <label>Especifique:</label>
-            <textarea id="f_alergia" placeholder="Describe la condición o requerimiento..."></textarea>
+        <div class="fsec">🏊 ¿Sabe nadar? *</div>
+        <div class="fgrid">
+          <div class="fg full">
+            <select id="f_nadar" required>
+              <option value="">Selecciona</option>
+              <option>Sí</option>
+              <option>No</option>
+            </select>
           </div>
         </div>
 
-        <div class="fsec">💰 Forma de pago</div>
-        <div class="fg full">
-          <label>¿Cómo prefiere pagar? *</label>
-          <select id="f_pago" required>
-            <option value="">Selecciona</option>
-            <option>Pago completo en Ref.</option>
-            <option>Pago en divisas (consultar descuento)</option>
-            <option>Pago mixto</option>
-          </select>
+        <div class="fsec">💳 Forma de pago *</div>
+        <div class="fgrid">
+          <div class="fg full">
+            <select id="f_pago" required>
+              <option value="">Selecciona</option>
+              <option>Pago completo</option>
+              <option>Reserva + pago en cuotas</option>
+              <option>Pago en divisas (consultar descuento)</option>
+            </select>
+          </div>
         </div>
 
-        <div class="fsec">💬 Información adicional</div>
-        <div class="fg full">
-          <label>¿Tienes alguna pregunta o comentario adicional?</label>
-          <textarea id="f_comentario" placeholder="Escribe aquí cualquier duda o comentario..."></textarea>
+        <div class="fsec">⚕️ Alergias o indicaciones médicas</div>
+        <div class="fgrid">
+          <div class="fg full">
+            <textarea id="f_alergias" placeholder="Describe cualquier alergia, condición médica o indicación especial..."></textarea>
+          </div>
         </div>
 
         <button type="submit" class="btn-submit" id="btn-enviar">💖 Enviar inscripción</button>
@@ -585,10 +614,9 @@ footer strong{color:var(--rosa);}
     <div class="confirmacion" id="conf">
       <span class="conf-ico">💖</span>
       <h3 class="conf-ttl">¡Inscripción recibida! ✨</h3>
-      <p class="conf-txt" style="font-weight:800;font-size:1.05rem;margin-bottom:10px;">¡Gracias por anotar a tu hija en la Pretemporada SPC 2026! 💜</p>
-      <p class="conf-txt">Hemos recibido su información. Recuerda que la apertura de la semana está sujeta a un mínimo de participantes.<br><br>
-      Te contactaremos para confirmar y darte los datos de pago. Cualquier duda escríbenos.</p>
-      <a href="https://wa.me/584122192602?text=¡Hola!%20Acabo%20de%20inscribir%20a%20mi%20hija%20en%20la%20Pretemporada%20SPC%202026%20del%203%20al%207%20de%20agosto.%20¿Me%20pueden%20dar%20más%20información?" class="btn-wa" target="_blank">
+      <p class="conf-txt" style="font-weight:800;font-size:1.05rem;margin-bottom:10px;">¡Gracias por confiar en SPC 2026! 💜</p>
+      <p class="conf-txt">Recibimos toda la información. Escríbenos por WhatsApp para recibir los <strong>datos de pago</strong> y confirmar el cupo de tu hija.</p>
+      <a href="https://wa.me/584122192602?text=¡Hola!%20Acabo%20de%20completar%20el%20formulario%20de%20inscripción%20SPC%202026.%20¿Me%20pueden%20enviar%20los%20datos%20de%20pago?" class="btn-wa" target="_blank">
         💬 Escribir por WhatsApp
       </a>
     </div>
@@ -620,19 +648,20 @@ async function submitForm(e){
   btn.textContent='⏳ Enviando...';btn.disabled=true;
 
   const data={
-    tipo:'pretemporada_agosto2026',
-    nombre:document.getElementById('f_nombre').value,
-    edad:document.getElementById('f_edad').value,
-    nacimiento:document.getElementById('f_nacimiento').value,
-    representante:document.getElementById('f_representante').value,
-    telefono:document.getElementById('f_telefono').value,
-    correo:document.getElementById('f_correo').value,
-    socio:document.querySelector('input[name=socio]:checked')?.value||'',
-    num_socio:document.getElementById('f_num_socio')?.value||'',
-    alergia:document.querySelector('input[name=alergia]:checked')?.value||'',
-    alergia_detalle:document.getElementById('f_alergia')?.value||'',
-    pago:document.getElementById('f_pago').value,
-    comentario:document.getElementById('f_comentario').value,
+    nombre:    document.getElementById('f_nombre').value,
+    cedula:    document.getElementById('f_cedula').value,
+    fechaNacimiento: document.getElementById('f_nacimiento').value,
+    edad:      document.getElementById('f_edad').value,
+    representante: document.getElementById('f_representante').value,
+    correo:    document.getElementById('f_correo').value,
+    telefono1: document.getElementById('f_telefono1').value,
+    telefono2: document.getElementById('f_telefono2').value,
+    socios:    document.getElementById('f_socios').value,
+    numSocio:  document.getElementById('f_num_socio').value,
+    tiempo: Array.from(document.querySelectorAll('input[name=tiempo]:checked')).map(c=>c.value).join(', '),
+    nadar:     document.getElementById('f_nadar').value,
+    pago:      document.getElementById('f_pago').value,
+    alergias:  document.getElementById('f_alergias').value,
   };
 
   try{

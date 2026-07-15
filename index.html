@@ -1639,17 +1639,16 @@ footer strong { color: var(--rosa); }
                 <label>🔢 Nº de socio (si aplica)</label>
                 <input type="text" placeholder="Número de socio">
               </div>
-              <div class="fg">
-                <label>📅 ¿Qué tiempo asistirá? *</label>
-                <select required>
-                  <option value="">Selecciona</option>
-                  <option>🌟 Pretemporada (3 al 7 de agosto)</option>
-                  <option>1 semana</option>
-                  <option>2 semanas</option>
-                  <option>3 semanas</option>
-                  <option>4 semanas / temporada completa</option>
-                  <option>Pretemporada + temporada completa</option>
-                </select>
+              <div class="fg full">
+                <label>📅 ¿Qué semanas asistirá? * <span style="font-weight:400;color:var(--muted)">(puedes marcar varias)</span></label>
+                <div class="check-group" id="tiempo-checks">
+                  <label class="check-opt"><input type="checkbox" name="tiempo" value="🌟 Pretemporada (3 al 7 de agosto)"> 🌟 Pretemporada (3 al 7 de agosto)</label>
+                  <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 1 (10 al 14 de agosto)"> Semana 1 (10 al 14 de agosto)</label>
+                  <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 2 (17 al 21 de agosto)"> Semana 2 (17 al 21 de agosto)</label>
+                  <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 3 (24 al 28 de agosto)"> Semana 3 (24 al 28 de agosto)</label>
+                  <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 4 (1 al 4 de septiembre)"> Semana 4 (1 al 4 de septiembre)</label>
+                  <label class="check-opt"><input type="checkbox" name="tiempo" value="Temporada completa (4 semanas)"> ⭐ Temporada completa (4 semanas)</label>
+                </div>
               </div>
               <div class="fg">
                 <label>🏊 ¿Sabe nadar? *</label>
