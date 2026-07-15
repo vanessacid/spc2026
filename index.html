@@ -1537,64 +1537,72 @@ footer strong { color: var(--rosa); }
     <div class="tag">💰 Precios 2026</div>
     <h2 class="stitle">Flexible para cada<br><span class="g">familia</span></h2>
 
-    <!-- Banner Pretemporada -->
-    <div style="background:linear-gradient(135deg,#1A0030,#6B00A0);border-radius:24px;padding:32px 36px;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-      <div>
-        <div style="display:inline-block;background:var(--amarillo);color:var(--dark);font-family:var(--font);font-weight:900;font-size:0.75rem;padding:4px 14px;border-radius:50px;margin-bottom:10px;letter-spacing:1px;">✨ NUEVO 2026</div>
-        <h3 style="font-family:var(--font);font-weight:900;font-size:1.4rem;color:white;margin-bottom:6px;">💖 Pretemporada SPC</h3>
-        <p style="color:rgba(255,255,255,0.85);font-size:0.92rem;line-height:1.6;">Del <strong style="color:var(--amarillo)">3 al 7 de agosto</strong> · 8:00 AM a 1:00 PM · Ref. 75 semana completa<br>Una semana especial para que las niñas vuelvan a encontrarse, jugar y brillar. 💜</p>
-      </div>
-      <a href="/pretemporada.html" style="background:linear-gradient(135deg,var(--rosa),var(--morado));color:white;font-family:var(--font);font-weight:900;font-size:0.95rem;padding:14px 28px;border-radius:50px;text-decoration:none;white-space:nowrap;box-shadow:0 6px 20px rgba(255,61,170,0.4);flex-shrink:0;transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        💖 Ver Pretemporada
-      </a>
-    </div>
-
     <div class="precios-grid">
-      <div class="precio-card reveal">
+
+      <!-- PRETEMPORADA -->
+      <div class="precio-card reveal" style="border:2px solid var(--rosa);grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:28px 32px;">
+        <div>
+          <div style="display:inline-block;background:var(--amarillo);color:var(--dark);font-family:var(--font);font-weight:900;font-size:0.72rem;padding:4px 14px;border-radius:50px;margin-bottom:10px;letter-spacing:1px;">✨ NUEVO 2026</div>
+          <div style="font-family:var(--font);font-weight:900;font-size:1.2rem;color:var(--dark);margin-bottom:6px;">💖 Pretemporada SPC</div>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.6;margin:0;">Una semana antes de comenzar nuestra temporada, abrimos una semana especial de <strong>8:00 AM a 1:00 PM</strong> para calentar motores, reencontrarse con las amigas y volver a la magia SPC antes de que todo empiece. <strong style="color:var(--rosa)">Del 3 al 7 de agosto.</strong></p>
+        </div>
+        <div style="text-align:center;flex-shrink:0;">
+          <div style="font-family:var(--font);font-weight:900;font-size:2.5rem;color:var(--rosa);line-height:1;">$60</div>
+          <div style="font-size:0.8rem;color:var(--muted);margin-bottom:12px;">semana completa</div>
+          <a href="#inscripcion" style="display:inline-block;background:linear-gradient(135deg,var(--rosa),var(--morado));color:white;font-family:var(--font);font-weight:900;font-size:0.9rem;padding:12px 24px;border-radius:50px;text-decoration:none;box-shadow:0 4px 16px rgba(255,61,170,0.35);">✨ Inscríbete ya</a>
+        </div>
+      </div>
+
+      <!-- SEMANAS -->
+      <div class="precio-card reveal" style="transition-delay:0.1s">
         <div class="p-icon">📅</div>
         <div class="p-name">Por semana</div>
-        <div class="p-amount">130</div>
-        <div class="p-unit">Ref. por semana</div>
+        <div class="p-amount">$110</div>
+        <div class="p-unit">por semana · 8am a 4pm</div>
         <div class="p-note">Ideal para probar la magia SPC. ¡Una semana cambia todo!</div>
+        <a href="#inscripcion" style="display:inline-block;margin-top:16px;background:linear-gradient(135deg,var(--rosa),var(--morado));color:white;font-family:var(--font);font-weight:800;font-size:0.85rem;padding:10px 20px;border-radius:50px;text-decoration:none;text-align:center;">✨ Inscríbete ya</a>
       </div>
 
-      <div class="precio-card star reveal" style="transition-delay:0.1s">
+      <div class="precio-card star reveal" style="transition-delay:0.2s">
         <div class="precio-badge-top">⭐ Mejor opción</div>
         <div class="p-icon">🌟</div>
         <div class="p-name">Temporada completa</div>
-        <div class="p-amount">420</div>
-        <div class="p-unit">Ref. · 4 semanas</div>
+        <div class="p-amount">$420</div>
+        <div class="p-unit">4 semanas · 8am a 4pm</div>
         <div class="p-note">La experiencia SPC al máximo. La opción favorita de las familias que ya la conocen.</div>
+        <a href="#inscripcion" style="display:inline-block;margin-top:16px;background:white;color:var(--morado);font-family:var(--font);font-weight:800;font-size:0.85rem;padding:10px 20px;border-radius:50px;text-decoration:none;text-align:center;">✨ Inscríbete ya</a>
       </div>
 
-      <div class="precio-card reveal" style="transition-delay:0.2s">
-        <div class="p-icon">🔒</div>
-        <div class="p-name">Reserva tu cupo</div>
-        <div class="p-amount">20</div>
-        <div class="p-unit">Ref. · pago inicial</div>
-        <div class="p-note">Asegura el lugar de tu hija hoy. Los cupos se agotan rápido.</div>
+      <div class="precio-card reveal" style="transition-delay:0.3s">
+        <div class="p-icon">💖</div>
+        <div class="p-name">Pretemporada + Temporada</div>
+        <div class="p-amount">$470</div>
+        <div class="p-unit">5 semanas en total</div>
+        <div class="p-note">Todo SPC 2026 desde el primer día. La experiencia completa.</div>
+        <a href="#inscripcion" style="display:inline-block;margin-top:16px;background:linear-gradient(135deg,var(--rosa),var(--morado));color:white;font-family:var(--font);font-weight:800;font-size:0.85rem;padding:10px 20px;border-radius:50px;text-decoration:none;text-align:center;">✨ Inscríbete ya</a>
       </div>
+
     </div>
 
-    <div class="extras-row reveal" style="transition-delay:0.3s">
+    <div class="extras-row reveal" style="transition-delay:0.4s">
       <div class="extra-pill">
-        <p>🍽️ Comidas opcionales</p>
-        <span>+Ref. 30 por semana · no incluidas</span>
+        <p>🇻🇪 Pago en Bs</p>
+        <span>A tasa BCV del día · consultar equivalencia</span>
       </div>
       <div class="extra-pill">
         <p>🏛️ Niñas no socias HG</p>
-        <span>+Ref. 20 por semana adicional</span>
+        <span>+$20 por semana adicional</span>
       </div>
       <div class="extra-pill">
-        <p>💳 Plan de pago en cuotas</p>
+        <p>💳 Pago en cuotas</p>
         <span>Pregunta por tu plan personalizado</span>
       </div>
     </div>
 
-    <div class="reserva-block reveal" style="transition-delay:0.4s">
+    <div class="reserva-block reveal" style="transition-delay:0.5s">
       <div class="reserva-left">
         <h3>Reserva ahora, paga poco a poco</h3>
-        <p>Escríbenos por WhatsApp y te enviamos los datos de pago al momento. Puedes reservar con <strong>Ref. 20</strong> y el resto pagarlo en cuotas antes del primer día.</p>
+        <p>Escríbenos por WhatsApp y te enviamos los datos de pago al momento. Puedes reservar con un abono y el resto pagarlo en cuotas antes del primer día.</p>
         <div class="pasos">
           <div class="paso">
             <div class="paso-num">1</div>
@@ -1636,39 +1644,39 @@ footer strong { color: var(--rosa); }
             <div class="fgrid">
               <div class="fg full">
                 <label>✨ Nombre completo de la participante *</label>
-                <input type="text" placeholder="Nombre y apellido completo" required>
+                <input type="text" id="f_nombre" placeholder="Nombre y apellido completo" required>
               </div>
               <div class="fg">
                 <label>🪪 Cédula * <span style="font-weight:400;color:var(--muted);font-size:0.78rem;">(si la niña no tiene, coloca la del representante)</span></label>
-                <input type="text" placeholder="Número de cédula" required>
+                <input type="text" id="f_cedula" placeholder="Número de cédula" required>
               </div>
               <div class="fg">
                 <label>🎂 Fecha de nacimiento *</label>
-                <input type="date" required>
+                <input type="date" id="f_nacimiento" required>
               </div>
               <div class="fg">
                 <label>👧 Edad *</label>
-                <input type="number" min="4" max="14" placeholder="4 a 14 años" required>
+                <input type="number" min="4" max="14" id="f_edad" placeholder="4 a 14 años" required>
               </div>
               <div class="fg">
                 <label>👤 Nombre del representante *</label>
-                <input type="text" placeholder="Nombre y apellido" required>
+                <input type="text" id="f_representante" placeholder="Nombre y apellido" required>
               </div>
               <div class="fg">
                 <label>📧 Correo electrónico *</label>
-                <input type="email" placeholder="correo@ejemplo.com" required>
+                <input type="email" id="f_correo" placeholder="correo@ejemplo.com" required>
               </div>
               <div class="fg">
                 <label>📱 Teléfono 1 *</label>
-                <input type="tel" placeholder="0412-XXXXXXX" required>
+                <input type="tel" id="f_tel1" placeholder="0412-XXXXXXX" required>
               </div>
               <div class="fg">
                 <label>📱 Teléfono 2 *</label>
-                <input type="tel" placeholder="0412-XXXXXXX" required>
+                <input type="tel" id="f_tel2" placeholder="0412-XXXXXXX" required>
               </div>
               <div class="fg full">
                 <label>🏛️ ¿Son socios de la Hermandad Gallega? *</label>
-                <select required>
+                <select id="f_socios" required>
                   <option value="">Selecciona</option>
                   <option>Sí, somos socios</option>
                   <option>No somos socios</option>
@@ -1676,7 +1684,7 @@ footer strong { color: var(--rosa); }
               </div>
               <div class="fg">
                 <label>🔢 Nº de socio *</label>
-                <input type="text" placeholder="Número de socio (si no es socio escriba N/A)" required>
+                <input type="text" id="f_numsocio" placeholder="Número de socio (si no es socio escriba N/A)" required>
               </div>
               <div class="fg full" style="width:100%;grid-column:1/-1;">
                 <label>📅 ¿Qué semanas asistirá? * <span style="font-weight:400;color:var(--muted)">(puedes marcar varias)</span></label>
@@ -1692,7 +1700,7 @@ footer strong { color: var(--rosa); }
               </div>
               <div class="fg">
                 <label>🏊 ¿Sabe nadar? *</label>
-                <select required>
+                <select id="f_nadar" required>
                   <option value="">Selecciona</option>
                   <option>Sí</option>
                   <option>No</option>
@@ -1711,7 +1719,7 @@ footer strong { color: var(--rosa); }
               </div>
               <div class="fg full">
                 <label>⚕️ Alergias o indicaciones médicas * <span style="font-weight:400;color:var(--muted);font-size:0.78rem;">(si no tiene, escribe "Ninguna")</span></label>
-                <textarea placeholder="Describe cualquier condición médica o indicación especial, o escribe Ninguna..." required></textarea>
+                <textarea id="f_alergias" placeholder="Describe cualquier condición médica o indicación especial, o escribe Ninguna..." required></textarea>
               </div>
             </div>
             <button type="submit" class="btn-submit">✨ Enviar inscripción</button>
@@ -1871,24 +1879,21 @@ async function submitForm(e) {
   btn.textContent = '⏳ Enviando...';
   btn.disabled = true;
 
-  const form = document.getElementById('spc-form');
-  const inputs = form.querySelectorAll('input, select, textarea');
-
   const data = {
-    nombre:          inputs[0].value,
-    cedula:          inputs[1].value,
-    fechaNacimiento: inputs[2].value,
-    edad:            inputs[3].value,
-    representante:   inputs[4].value,
-    correo:          inputs[5].value,
-    telefono1:       inputs[6].value,
-    telefono2:       inputs[7].value,
-    socios:          inputs[8].value,
-    numSocio:        inputs[9].value,
-    tiempo:          inputs[10].value,
-    nadar:           inputs[11].value,
-    pago:            inputs[12].value,
-    alergias:        inputs[13].value,
+    nombre:          document.getElementById('f_nombre')?.value || '',
+    cedula:          document.getElementById('f_cedula')?.value || '',
+    fechaNacimiento: document.getElementById('f_nacimiento')?.value || '',
+    edad:            document.getElementById('f_edad')?.value || '',
+    representante:   document.getElementById('f_representante')?.value || '',
+    correo:          document.getElementById('f_correo')?.value || '',
+    telefono1:       document.getElementById('f_tel1')?.value || '',
+    telefono2:       document.getElementById('f_tel2')?.value || '',
+    socios:          document.getElementById('f_socios')?.value || '',
+    numSocio:        document.getElementById('f_numsocio')?.value || '',
+    tiempo:          Array.from(document.querySelectorAll('input[name="tiempo"]:checked')).map(c=>c.value).join(', '),
+    nadar:           document.getElementById('f_nadar')?.value || '',
+    pago:            document.getElementById('f_pago')?.value || '',
+    alergias:        document.getElementById('f_alergias')?.value || '',
   };
 
   try {
