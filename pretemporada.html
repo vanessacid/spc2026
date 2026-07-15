@@ -524,8 +524,8 @@ footer strong{color:var(--rosa);}
             <input type="text" id="f_nombre" placeholder="Nombre y apellido completo" required>
           </div>
           <div class="fg">
-            <label>Cédula</label>
-            <input type="text" id="f_cedula" placeholder="Número de cédula">
+            <label>Cédula * <span style="font-weight:400;color:var(--muted);font-size:0.78rem;">(si no tiene, coloca la del representante)</span></label>
+            <input type="text" id="f_cedula" placeholder="Número de cédula" required>
           </div>
           <div class="fg">
             <label>Fecha de nacimiento *</label>
@@ -552,8 +552,8 @@ footer strong{color:var(--rosa);}
             <input type="tel" id="f_telefono1" placeholder="0412-XXXXXXX" required>
           </div>
           <div class="fg">
-            <label>Teléfono 2</label>
-            <input type="tel" id="f_telefono2" placeholder="0412-XXXXXXX">
+            <label>Teléfono 2 *</label>
+            <input type="tel" id="f_telefono2" placeholder="0412-XXXXXXX" required>
           </div>
         </div>
 
@@ -568,8 +568,8 @@ footer strong{color:var(--rosa);}
             </select>
           </div>
           <div class="fg">
-            <label>Nº de socio (si aplica)</label>
-            <input type="text" id="f_num_socio" placeholder="Número de socio">
+            <label>Nº de socio * <span style="font-weight:400;color:var(--muted);font-size:0.78rem;">(si no es socio escribe N/A)</span></label>
+            <input type="text" id="f_num_socio" placeholder="Número de socio o N/A" required>
           </div>
         </div>
 
@@ -584,6 +584,7 @@ footer strong{color:var(--rosa);}
               <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 4 (1 al 4 de septiembre)"> Semana 4 (1 al 4 de septiembre)</label>
               <label class="check-opt"><input type="checkbox" name="tiempo" value="Temporada completa (4 semanas)"> ⭐ Temporada completa (4 semanas)</label>
             </div>
+            <p id="tiempo-error" style="display:none;color:#FF3DAA;font-size:0.82rem;margin-top:6px;font-family:var(--font);font-weight:700;">⚠️ Por favor selecciona al menos una semana.</p>
           </div>
         </div>
 
@@ -612,10 +613,10 @@ footer strong{color:var(--rosa);}
           </div>
         </div>
 
-        <div class="fsec">⚕️ Alergias o indicaciones médicas</div>
+        <div class="fsec">⚕️ Alergias o indicaciones médicas * <span style="font-weight:400;color:var(--muted);font-size:0.78rem;">(si no tiene, escribe "Ninguna")</span></div>
         <div class="fgrid">
           <div class="fg full">
-            <textarea id="f_alergias" placeholder="Describe cualquier alergia, condición médica o indicación especial..."></textarea>
+            <textarea id="f_alergias" placeholder="Describe cualquier condición médica o indicación especial, o escribe Ninguna..." required></textarea>
           </div>
         </div>
 
@@ -656,6 +657,15 @@ const SCRIPT_URL="https://script.google.com/macros/s/AKfycbwmHCqHhLSwi6uhzpbUK82
 
 async function submitForm(e){
   e.preventDefault();
+
+  // Validar al menos un checkbox marcado
+  const checked = document.querySelectorAll('input[name="tiempo"]:checked');
+  if (checked.length === 0) {
+    document.getElementById('tiempo-error').style.display = 'block';
+    document.getElementById('tiempo-checks').scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  document.getElementById('tiempo-error').style.display = 'none';
   const btn=document.getElementById('btn-enviar');
   btn.textContent='⏳ Enviando...';btn.disabled=true;
 
