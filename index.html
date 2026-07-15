@@ -1920,18 +1920,19 @@ async function submitForm(e) {
     alergias:        document.getElementById('f_alergias')?.value || '',
   };
 
-  try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-  } catch(err) {
-    console.log('Error:', err);
-  }
+  // Enviar con timeout de seguridad
+  const sendData = fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(err => console.log('Error:', err));
 
-  form.style.display = 'none';
+  const timeout = new Promise(resolve => setTimeout(resolve, 5000));
+  await Promise.race([sendData, timeout]);
+
+  // Mostrar confirmación siempre
+  document.getElementById('spc-form').style.display = 'none';
   const conf = document.getElementById('conf');
   conf.classList.add('on');
   conf.scrollIntoView({ behavior: 'smooth', block: 'center' });
