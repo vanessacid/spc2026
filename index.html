@@ -806,6 +806,45 @@ footer strong { color: var(--rosa); }
   .car-btn{ width:38px; height:38px; font-size:1.4rem; }
 }
 
+/* ─── CHECKBOXES SEMANAS ─── */
+.check-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+}
+.check-opt {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+  cursor: pointer;
+  padding: 13px 18px;
+  border-radius: 12px;
+  border: 2px solid #EDE0F5;
+  background: #FCFAFF;
+  transition: border-color 0.2s, background 0.2s;
+  line-height: 1.4;
+  width: 100%;
+  box-sizing: border-box;
+}
+.check-opt:hover { border-color: var(--rosa); background: #FFF0FB; }
+.check-opt input[type=checkbox] {
+  width: 20px; height: 20px;
+  accent-color: var(--rosa);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+/* Mobile checkboxes */
+@media(max-width:640px) {
+  .check-opt { font-size: 0.85rem; padding: 12px 14px; gap: 12px; }
+  .check-opt input[type=checkbox] { width: 22px; height: 22px; }
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1639,9 +1678,9 @@ footer strong { color: var(--rosa); }
                 <label>🔢 Nº de socio (si aplica)</label>
                 <input type="text" placeholder="Número de socio">
               </div>
-              <div class="fg full">
+              <div class="fg full" style="width:100%;grid-column:1/-1;">
                 <label>📅 ¿Qué semanas asistirá? * <span style="font-weight:400;color:var(--muted)">(puedes marcar varias)</span></label>
-                <div class="check-group" id="tiempo-checks">
+                <div class="check-group" id="tiempo-checks" style="display:flex;flex-direction:column;gap:10px;width:100%;">
                   <label class="check-opt"><input type="checkbox" name="tiempo" value="🌟 Pretemporada (3 al 7 de agosto)"> 🌟 Pretemporada (3 al 7 de agosto)</label>
                   <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 1 (10 al 14 de agosto)"> Semana 1 (10 al 14 de agosto)</label>
                   <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 2 (17 al 21 de agosto)"> Semana 2 (17 al 21 de agosto)</label>
@@ -1810,7 +1849,7 @@ function toggleFaq(q) {
 }
 
 // Form submit → Google Sheets
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEsmUWBHaZ-ojX7LLStNLw9H3aaFjKqT1_39e8of0UVFZAm0y845J0aGlUCeN0Zg_EoQ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmHCqHhLSwi6uhzpbUK82PY6z62p3OZmkpavfH2SMQKuIFize2Oea6S0rVbhXpX0i9Nw/exec";
 
 async function submitForm(e) {
   e.preventDefault();
