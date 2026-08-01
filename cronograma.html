@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cronograma SPC 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Nunito',sans-serif; background:#FFF5FB; padding:0 0 32px; }
+
+/* HEADER */
+.header {
+  background:linear-gradient(135deg,#FF3DAA,#9B5FFF);
+  padding:24px 20px 18px; text-align:center;
+}
+.header h1 { font-size:1.5rem; font-weight:900; color:white; margin-bottom:4px; }
+.header p  { color:rgba(255,255,255,0.88); font-size:0.82rem; font-weight:600; }
+
+/* NOTAS GENERALES */
+.notas-gen {
+  background:#1A0030;
+  padding:12px 16px;
+  display:flex; flex-direction:column; gap:6px;
+}
+.nota-gen {
+  color:rgba(255,255,255,0.85);
+  font-size:0.78rem;
+  line-height:1.4;
+}
+.nota-gen b { color:#FFE566; }
+
+/* BLOQUE SEMANA */
+.semana {
+  margin:12px 12px 0;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+.sem-header {
+  padding:12px 16px;
+  text-align:center;
+  color:white;
+}
+.sem-header h2 {
+  font-size:1.1rem;
+  font-weight:900;
+  margin-bottom:2px;
+}
+.sem-header p {
+  font-size:0.8rem;
+  font-weight:700;
+  opacity:0.9;
+}
+
+.pre-h  { background:linear-gradient(135deg,#FF3DAA,#FF6DC0); }
+.sem1-h { background:linear-gradient(135deg,#9B5FFF,#BB88FF); }
+.sem2-h { background:linear-gradient(135deg,#00BBDD,#44DDFF); }
+.sem3-h { background:linear-gradient(135deg,#FF7A00,#FFAA44); }
+.sem4-h { background:linear-gradient(135deg,#22BB66,#44DD88); }
+
+/* DIAS */
+.dias { background:white; }
+
+.dia {
+  padding:12px 16px;
+  border-bottom:1px solid #F0E8FF;
+  display:grid;
+  grid-template-columns:90px 1fr;
+  gap:10px;
+  align-items:start;
+}
+.dia:last-child { border-bottom:none; }
+
+.dia-fecha {
+  text-align:center;
+  padding-top:2px;
+}
+.dia-fecha .dow {
+  font-size:0.65rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#9B5FFF;
+}
+.dia-fecha .date {
+  font-size:1rem;
+  font-weight:900;
+  color:#1A0030;
+  line-height:1;
+}
+.dia-fecha .month {
+  font-size:0.65rem;
+  font-weight:700;
+  color:#7A4F9A;
+}
+
+.dia-info {}
+
+.dia-tema {
+  font-size:0.92rem;
+  font-weight:900;
+  color:#1A0030;
+  margin-bottom:6px;
+}
+
+.dia-llevar {
+  font-size:0.75rem;
+  color:#5A3080;
+  line-height:1.5;
+}
+.dia-llevar span {
+  display:block;
+  padding:1px 0;
+}
+.dia-llevar span::before { content:"· "; color:#FF3DAA; font-weight:800; }
+
+/* Tipos especiales */
+.piscina  { background:#EFF9FF; }
+.colores  { background:#FFFDE8; }
+.franela  { background:#EFFFEF; }
+.ensayo   { background:#FFF0FB; }
+.show-dia { background:#FFF0F8; }
+.cierre   { background:#F5F0FF; }
+
+.tag-piscina  { display:inline-block; background:#00BBDD; color:white; border-radius:50px; padding:2px 10px; font-size:0.68rem; font-weight:800; margin-bottom:4px; }
+.tag-special  { display:inline-block; background:#FF3DAA; color:white; border-radius:50px; padding:2px 10px; font-size:0.68rem; font-weight:800; margin-bottom:4px; }
+.tag-show     { display:inline-block; background:#CC0044; color:white; border-radius:50px; padding:2px 10px; font-size:0.68rem; font-weight:800; margin-bottom:4px; }
+.tag-verde    { display:inline-block; background:#22BB66; color:white; border-radius:50px; padding:2px 10px; font-size:0.68rem; font-weight:800; margin-bottom:4px; }
+.tag-morado   { display:inline-block; background:#9B5FFF; color:white; border-radius:50px; padding:2px 10px; font-size:0.68rem; font-weight:800; margin-bottom:4px; }
+
+.alert-text { color:#CC0044; font-weight:800; font-size:0.78rem; display:block; margin-bottom:4px; }
+
+/* FOOTER */
+.footer {
+  background:linear-gradient(135deg,#FF3DAA,#9B5FFF);
+  margin:16px 12px 0;
+  border-radius:16px;
+  padding:16px;
+  text-align:center;
+}
+.footer p { color:white; font-size:0.78rem; font-weight:700; margin-bottom:2px; }
+.footer small { color:rgba(255,255,255,0.75); font-size:0.7rem; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>✨ Cronograma SPC 2026</h1>
+  <p>Solo Para Chicas · Hermandad Gallega de Caracas</p>
+</div>
+
+<!-- NOTAS GENERALES -->
+<div class="notas-gen">
+  <div class="nota-gen"><b>Todos los días:</b> Ir desayunadas o llevar desayuno (8:00–9:00 AM) · Llevar almuerzo o contratar + botella de agua</div>
+  <div class="nota-gen"><b>Disfraz o accesorio:</b> Alusivo a la temática del día (no obligatorio, ¡pero hace el día más divertido!)</div>
+  <div class="nota-gen"><b>🏊 Días de piscina:</b> Traje de baño puesto desde casa · Toalla · Ropa de cambio · Protector solar aplicado desde casa (llevar en mochila para refuerzo) · Bolsa para ropa mojada</div>
+</div>
+
+<!-- ═══ PRETEMPORADA ═══ -->
+<div class="semana">
+  <div class="sem-header pre-h">
+    <h2>⭐ PRETEMPORADA SPC</h2>
+    <p>3 al 7 de agosto · 8:00 AM — 1:00 PM</p>
+  </div>
+  <div class="dias">
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Lunes</div><div class="date">3</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Bienvenida</div>
+        <div class="dia-llevar">
+          <span>Ropa cómoda deportiva</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Martes</div><div class="date">4</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Fitness / Deporte</div>
+        <div class="dia-llevar">
+          <span>Ropa deportiva cómoda</span>
+          <span>Tenis o calzado deportivo</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia piscina">
+      <div class="dia-fecha"><div class="dow">Miércoles</div><div class="date">5</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-piscina">🏊 PISCINA</span><br>Hawaiano</div>
+        <div class="dia-llevar">
+          <span>Traje de baño puesto desde casa</span>
+          <span>Toalla</span>
+          <span>Ropa de cambio</span>
+          <span>Protector solar (aplicado desde casa; llevar en mochila para refuerzo)</span>
+          <span>Bolsa para ropa mojada</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio hawaiano</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Jueves</div><div class="date">6</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Spa</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia colores">
+      <div class="dia-fecha"><div class="dow">Viernes</div><div class="date">7</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-special">🎨 COLORES</span></div>
+        <div class="dia-llevar">
+          <span class="alert-text">⭐ Cada niña lleva una merienda o chuchería del color asignado según su edad para compartir con todas</span>
+          <span>🩷 Rosa — 4 y 5 años</span>
+          <span>💙 Azul — 6 y 7 años</span>
+          <span>💚 Verde — 8 años</span>
+          <span>💛 Amarillo — 9 años</span>
+          <span>🧡 Naranja — 10 y 11 años</span>
+          <span>❤️ Rojo — Miniguías (12 años o más)</span>
+          <span>Outfit del color asignado</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SEMANA 1 ═══ -->
+<div class="semana">
+  <div class="sem-header sem1-h">
+    <h2>SEMANA 1</h2>
+    <p>10 al 14 de agosto · 8:00 AM — 4:00 PM</p>
+  </div>
+  <div class="dias">
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Lunes</div><div class="date">10</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Bienvenida</div>
+        <div class="dia-llevar">
+          <span>Ropa cómoda deportiva</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Martes</div><div class="date">11</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Rock and Roll</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio rockero</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia piscina">
+      <div class="dia-fecha"><div class="dow">Miércoles</div><div class="date">12</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-piscina">🏊 PISCINA</span><br>Sirenas</div>
+        <div class="dia-llevar">
+          <span>Traje de baño puesto desde casa</span>
+          <span>Toalla</span>
+          <span>Ropa de cambio</span>
+          <span>Protector solar (aplicado desde casa; llevar en mochila para refuerzo)</span>
+          <span>Bolsa para ropa mojada</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio de sirena</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Jueves</div><div class="date">13</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Mini Chefs</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio de chef</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Viernes</div><div class="date">14</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Barbie</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Outfit rosado / Barbie</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SEMANA 2 ═══ -->
+<div class="semana">
+  <div class="sem-header sem2-h">
+    <h2>SEMANA 2</h2>
+    <p>17 al 21 de agosto · 8:00 AM — 4:00 PM</p>
+  </div>
+  <div class="dias">
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Lunes</div><div class="date">17</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Espías</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio de espía</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Martes</div><div class="date">18</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Famosas</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Outfit de famosa / celebridad</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia piscina">
+      <div class="dia-fecha"><div class="dow">Miércoles</div><div class="date">19</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-piscina">🏊 PISCINA</span><br>Olimpiadas Acuáticas</div>
+        <div class="dia-llevar">
+          <span>Traje de baño puesto desde casa</span>
+          <span>Toalla</span>
+          <span>Ropa de cambio</span>
+          <span>Protector solar (aplicado desde casa; llevar en mochila para refuerzo)</span>
+          <span>Bolsa para ropa mojada</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Jueves</div><div class="date">20</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Circo</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio circense / colorido</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Viernes</div><div class="date">21</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Disney</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz de personaje Disney</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SEMANA 3 ═══ -->
+<div class="semana">
+  <div class="sem-header sem3-h">
+    <h2>SEMANA 3</h2>
+    <p>24 al 28 de agosto · 8:00 AM — 4:00 PM</p>
+  </div>
+  <div class="dias">
+
+    <div class="dia franela">
+      <div class="dia-fecha"><div class="dow">Lunes</div><div class="date">24</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-verde">🎨 DÍA DE LA FRANELA SPC</span><br>Nacionalidades</div>
+        <div class="dia-llevar">
+          <span class="alert-text">⭐ Llevar franela blanca de algodón (estilo ovejita) — OBLIGATORIO para hacer la franela del plan</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Martes</div><div class="date">25</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Safari</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio safari / animal print</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia piscina">
+      <div class="dia-fecha"><div class="dow">Miércoles</div><div class="date">26</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-piscina">🏊 PISCINA</span><br>Hawaiano</div>
+        <div class="dia-llevar">
+          <span>Traje de baño puesto desde casa</span>
+          <span>Toalla</span>
+          <span>Ropa de cambio</span>
+          <span>Protector solar (aplicado desde casa; llevar en mochila para refuerzo)</span>
+          <span>Bolsa para ropa mojada</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio hawaiano</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Jueves</div><div class="date">27</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Video Juegos</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio de personaje de videojuego</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Viernes</div><div class="date">28</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Pijamas</div>
+        <div class="dia-llevar">
+          <span class="alert-text">⭐ Llevar manta y almohada en la mañana</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Pijama o ropa cómoda</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SEMANA 4 ═══ -->
+<div class="semana">
+  <div class="sem-header sem4-h">
+    <h2>SEMANA 4</h2>
+    <p>31 de agosto al 4 de septiembre · 8:00 AM — 4:00 PM</p>
+  </div>
+  <div class="dias">
+
+    <div class="dia">
+      <div class="dia-fecha"><div class="dow">Lunes</div><div class="date">31</div><div class="month">Agosto</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">Piratas</div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio pirata</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia piscina">
+      <div class="dia-fecha"><div class="dow">Martes</div><div class="date">1</div><div class="month">Septiembre</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-piscina">🏊 PISCINA</span><br>Hadas</div>
+        <div class="dia-llevar">
+          <span>Traje de baño puesto desde casa</span>
+          <span>Toalla</span>
+          <span>Ropa de cambio</span>
+          <span>Protector solar (aplicado desde casa; llevar en mochila para refuerzo)</span>
+          <span>Bolsa para ropa mojada</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio de hada</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia ensayo">
+      <div class="dia-fecha"><div class="dow">Miércoles</div><div class="date">2</div><div class="month">Septiembre</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-morado">💇 PEINADOS LOCOS</span><br>Ensayo General</div>
+        <div class="dia-llevar">
+          <span class="alert-text">⭐ ¡Ven con el peinado más loco posible!</span>
+          <span>Ropa cómoda</span>
+          <span>Almuerzo o contratar + botella de agua</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia show-dia">
+      <div class="dia-fecha"><div class="dow">Jueves</div><div class="date">3</div><div class="month">Septiembre</div></div>
+      <div class="dia-info">
+        <div class="dia-tema"><span class="tag-show">⭐ SHOW FINAL</span></div>
+        <div class="dia-llevar">
+          <span class="alert-text">No hay actividades por la mañana</span>
+          <span>Presentarse desde las 3:00 PM</span>
+          <span>Outfit del show</span>
+          <span>Evento para familias: 6:00 PM – 8:00 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia cierre">
+      <div class="dia-fecha"><div class="dow">Viernes</div><div class="date">4</div><div class="month">Septiembre</div></div>
+      <div class="dia-info">
+        <div class="dia-tema">🎉 Cierre del programa<br><b>Temática: SORPRESA</b></div>
+        <div class="dia-llevar">
+          <span>Almuerzo o contratar + botella de agua</span>
+          <span>Disfraz o accesorio sorpresa</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>spc.vanessacid.com</p>
+  <small>plansoloparachicas@gmail.com · +58 412-2192602<br>Una vez chica, siempre SPC. 💜</small>
+</div>
+
+</body>
+</html>
