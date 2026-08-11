@@ -889,179 +889,156 @@ footer strong { color: var(--rosa); }
 @media(max-width:640px){
   .hamburger{display:flex;}
 }
+/* ═══════════════════════════════════════
+   TABLET  (≤ 1024px)
+═══════════════════════════════════════ */
 @media(max-width:1024px){
-  .section{padding:80px 40px;}
+  .section{padding:72px 32px;}
+  .nav-links{gap:20px;}
+  .nav-links a{font-size:0.82rem;}
   #hero{grid-template-columns:1fr; text-align:center;}
+  .hero-left{padding:100px 40px 48px;}
   .hero-right{height:360px; width:100%;}
-  .hero-video-wrap{border-radius:20px; overflow:hidden;}
-  .hero-video-wrap iframe{min-height:360px; border-radius:20px;}
-  .hero-left{padding:90px 40px 48px;}
+  .hero-video-wrap{border-radius:20px;}
   .hero-chips{justify-content:center;}
   .hero-btns{justify-content:center;}
   .lead{max-width:100%;}
   .quienes-grid{grid-template-columns:1fr; gap:40px;}
   .quienes-doll{order:-1;}
   .quienes-doll img{width:240px;}
+  .stats-row{justify-content:center; flex-wrap:wrap;}
+  .stat{min-width:100px;}
+  .temporada-band{grid-template-columns:repeat(3,1fr); gap:20px; padding:36px 32px;}
+  .tinfo+.tinfo{border-left:none;}
   .equipo-grid{grid-template-columns:1fr; gap:40px;}
   .equipo-visual{order:-1;}
   .equipo-visual img{width:220px;}
-  .form-layout{grid-template-columns:1fr; gap:40px;}
-  .temporada-band{grid-template-columns:repeat(3,1fr); gap:20px; padding:36px 32px;}
-  .tinfo+.tinfo{border-left:none;}
-  .reserva-block{grid-template-columns:1fr; text-align:center;}
-  .pasos{justify-content:center; flex-wrap:wrap;}
-  .reserva-right{margin-top:8px;}
   .testi-grid{grid-template-columns:1fr 1fr;}
   .wamsg.featured{grid-column:span 1;}
   .precios-grid{grid-template-columns:1fr 1fr; gap:16px;}
   .precio-card.star{grid-column:span 2;}
+  .reserva-block{grid-template-columns:1fr; text-align:center;}
+  .pasos{justify-content:center; flex-wrap:wrap;}
+  .reserva-right{margin-top:8px;}
+  .form-layout{grid-template-columns:1fr; gap:40px;}
+  #no-socios-fields > div{grid-template-columns:1fr 1fr;}
   .contacto-strip{flex-direction:column; text-align:center;}
   #cta{padding:80px 40px;}
-  .stats-row{justify-content:center;}
-  .stat{min-width:100px;}
-  #no-socios-fields > div { grid-template-columns:1fr 1fr; }
 }
 
-/* ── MOBILE ── */
+/* ═══════════════════════════════════════
+   MÓVIL  (≤ 640px)
+═══════════════════════════════════════ */
 @media(max-width:640px){
-  /* Nav */
-  nav{padding:12px 20px;}
+  .section{padding:52px 18px;}
+  .hamburger{display:flex;}
+  nav{padding:12px 18px;}
   .nav-links{display:none;}
-
-  /* Sections */
-  .section{padding:56px 20px;}
+  .nav-cta{display:none;}
 
   /* Hero */
   #hero{grid-template-columns:1fr; min-height:auto; padding-bottom:0;}
-  .hero-left{padding:88px 20px 36px; text-align:center;}
-  .hero-title{font-size:2rem;}
-  .hero-sub{font-size:0.95rem;}
-  .hero-chips{justify-content:center; gap:8px;}
-  .chip{font-size:0.76rem; padding:6px 12px;}
-  .hero-btns{flex-direction:column; align-items:center; gap:12px;}
-  .btn-hero-primary,.btn-hero-ghost{width:100%; text-align:center; padding:16px 24px; font-size:0.95rem;}
-  .hero-right{height:260px; width:100%;}
-  .hero-video-wrap{border-radius:0; height:260px;}
-  .video-badge{font-size:0.75rem; padding:8px 16px;}
+  .hero-left{padding:82px 18px 32px; text-align:center;}
+  .hero-title{font-size:1.9rem;}
+  .hero-sub{font-size:0.9rem;}
+  .hero-chips{justify-content:center; gap:6px; flex-wrap:wrap;}
+  .chip{font-size:0.72rem; padding:5px 11px;}
+  .hero-btns{flex-direction:column; align-items:center; gap:10px;}
+  .btn-hero-primary,.btn-hero-ghost{width:100%; text-align:center; padding:15px 20px; font-size:0.9rem;}
+  .hero-right{height:240px; width:100%;}
+  .hero-video-wrap{border-radius:0; height:240px;}
+  .video-badge{font-size:0.72rem; padding:7px 14px;}
 
   /* Quienes */
-  .quienes-doll img{width:180px;}
-  .pilares{grid-template-columns:1fr 1fr; gap:10px;}
-  .pilar{padding:12px 14px; font-size:0.82rem;}
-  .stats-row{flex-direction:column; gap:12px;}
-  .stat{min-width:auto; padding:18px 12px;}
-  .stat-n{font-size:1.8rem;}
-  .quote-strip{font-size:1rem; padding:20px;}
+  .quienes-doll img{width:160px;}
+  .pilares{grid-template-columns:1fr 1fr; gap:8px;}
+  .pilar{padding:10px 12px; font-size:0.78rem;}
+  .stats-row{flex-direction:column; gap:10px; align-items:center;}
+  .stat{min-width:auto; padding:16px; width:100%; max-width:280px;}
+  .stat-n{font-size:1.7rem;}
+  .quote-strip{font-size:0.95rem; padding:18px;}
 
   /* Temporada */
-  .temporada-band{grid-template-columns:1fr 1fr; gap:20px; padding:28px 20px;}
-  .tinfo:last-child{grid-column:span 2;}
+  .temporada-band{grid-template-columns:1fr; gap:0; padding:24px 18px;}
+  .tinfo{padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.15);}
+  .tinfo:last-child{border-bottom:none;}
 
   /* Actividades */
-  .acts-grid{gap:8px;}
-  .act-tag{font-size:0.82rem; padding:9px 16px;}
+  .acts-grid{gap:6px;}
+  .act-tag{font-size:0.78rem; padding:8px 14px;}
 
   /* Equipo */
-  .equipo-visual img{width:180px;}
-  .confianza-card{padding:16px;}
-  .confianza-ttl{font-size:0.88rem;}
+  .equipo-visual img{width:160px;}
+  .confianza-card{padding:14px;}
+  .confianza-ttl{font-size:0.85rem;}
 
-  /* Banner pretemporada */
-  #precios .section-inner > div[style*="linear-gradient(135deg,#1A0030"]{
-    flex-direction:column; text-align:center; padding:24px 20px;
-  }
-  #precios .section-inner > div[style*="linear-gradient(135deg,#1A0030"] a{
-    width:100%; text-align:center;
-  }
-
-  /* Show + Testimonios */
-  .show-banner{padding:32px 20px; border-radius:20px;}
-  .show-banner h3{font-size:1.3rem;}
-  .testi-grid{grid-template-columns:1fr; gap:14px;}
-  .wamsg{padding:20px;}
-  .wamsg.featured{grid-column:span 1;}
-  .wa-text{font-size:0.88rem;}
+  /* Testimonios */
+  .testi-grid{grid-template-columns:1fr; gap:12px;}
+  .wamsg{padding:18px;}
+  .wa-text{font-size:0.85rem;}
 
   /* Carrusel */
-  .carousel-wrap{max-width:100%; gap:8px;}
-  .car-btn{width:36px; height:36px; font-size:1.3rem; flex-shrink:0;}
+  .carousel-wrap{max-width:100%; gap:6px;}
+  .car-btn{width:34px; height:34px; font-size:1.2rem; flex-shrink:0;}
 
   /* Precios */
-  .precios-grid{grid-template-columns:1fr;}
+  .precios-grid{grid-template-columns:1fr; gap:14px;}
+  .precio-card{padding:22px 18px;}
   .precio-card.star{grid-column:span 1;}
-  .precio-badge-top{font-size:0.7rem;}
-  .p-amount{font-size:2.4rem;}
-  .extras-row{flex-direction:column;}
+  .precio-badge-top{font-size:0.68rem;}
+  .p-amount{font-size:2.2rem;}
+  .extras-row{flex-direction:column; gap:10px;}
+  .extra-pill{padding:14px 18px;}
 
   /* Reserva */
-  .reserva-block{padding:32px 20px; border-radius:20px; text-align:center;}
-  .reserva-left h3{font-size:1.4rem;}
-  .pasos{flex-direction:column; align-items:center; gap:10px;}
+  .reserva-block{padding:28px 18px; border-radius:18px; text-align:center;}
+  .reserva-left h3{font-size:1.3rem;}
+  .pasos{flex-direction:column; align-items:center; gap:8px;}
   .paso+.paso::before{content:none;}
   .paso-txt{max-width:none; text-align:center;}
-  .btn-reserva-big{padding:16px 28px; font-size:1rem; white-space:normal; text-align:center;}
+  .btn-reserva-big{padding:14px 24px; font-size:0.95rem; white-space:normal; text-align:center; width:100%;}
 
   /* Formulario */
-  .form-card{padding:24px 16px; border-radius:20px;}
+  .form-card{padding:22px 16px; border-radius:18px;}
   .fgrid{grid-template-columns:1fr;}
   .fg.full{grid-column:1;}
-  input,select,textarea{font-size:16px;}
+  input,select,textarea{font-size:16px !important;}
+  #no-socios-fields > div{grid-template-columns:1fr !important;}
+  #no-socios-fields{padding:14px !important;}
+
+  /* Checkboxes */
+  .check-opt{font-size:0.82rem; padding:11px 13px; gap:10px;}
+  .check-opt input[type=checkbox]{width:22px; height:22px;}
+
+  /* Show banner */
+  .show-banner{padding:28px 18px; border-radius:18px;}
+  .show-banner h3{font-size:1.2rem;}
 
   /* FAQ */
-  .faq-side h3{font-size:1.2rem;}
-  .faq-q{font-size:0.85rem; padding:15px 18px;}
+  .faq-side h3{font-size:1.1rem;}
+  .faq-q{font-size:0.82rem; padding:13px 16px;}
 
   /* CTA */
-  #cta{padding:64px 20px;}
-  #cta h2{font-size:1.8rem;}
-  .cta-doll{width:140px;}
+  #cta{padding:56px 18px;}
+  #cta h2{font-size:1.7rem;}
+  .cta-doll{width:120px;}
 
   /* Footer */
-  footer{padding:28px 20px; font-size:0.8rem;}
+  footer{padding:24px 18px; font-size:0.76rem;}
 
   /* Confirmacion */
-  .confirmacion{padding:32px 20px;}
-  .conf-ttl{font-size:1.5rem;}
-  .btn-wa{font-size:0.9rem; padding:14px 20px;}
+  .confirmacion{padding:28px 18px; border-radius:18px;}
+  .conf-ttl{font-size:1.4rem;}
+  .btn-wa{font-size:0.88rem; padding:13px 18px;}
 
   /* Float bar */
-  .float-bar{padding:10px 12px; gap:8px;}
-  .float-form{font-size:0.82rem; padding:12px 16px;}
-  .float-wa{font-size:0.82rem; padding:12px 16px;}
+  .float-bar{padding:9px 10px; gap:6px;}
+  .float-form{font-size:0.78rem; padding:11px 14px;}
+  .float-wa{font-size:0.78rem; padding:11px 14px; gap:6px;}
+  .float-wa svg{width:18px; height:18px;}
 
   /* Galería */
-  .galeria-grid{grid-template-columns:repeat(3,1fr); gap:4px;}
-
-  /* No socios campos */
-  #no-socios-fields > div { grid-template-columns:1fr !important; }
-  #no-socios-fields .fg { margin:0; }
-}
-
-  .btn-reserva-big{padding:16px 28px; font-size:1rem; white-space:normal; text-align:center;}
-
-  /* Formulario */
-  .form-card{padding:24px 16px; border-radius:20px;}
-  .fgrid{grid-template-columns:1fr;}
-  .fg.full{grid-column:1;}
-  input,select,textarea{font-size:16px;} /* evita zoom en iOS */
-
-  /* FAQ */
-  .faq-side h3{font-size:1.2rem;}
-  .faq-q{font-size:0.85rem; padding:15px 18px;}
-
-  /* CTA */
-  #cta{padding:64px 20px;}
-  #cta h2{font-size:1.8rem;}
-  .cta-doll{width:140px;}
-  .btn-hero-primary{font-size:1rem; padding:16px 28px;}
-
-  /* Footer */
-  footer{padding:28px 20px; font-size:0.8rem;}
-
-  /* Confirmacion */
-  .confirmacion{padding:32px 20px;}
-  .conf-ttl{font-size:1.5rem;}
-  .btn-wa{font-size:0.9rem; padding:14px 20px;}
+  .galeria-grid{grid-template-columns:repeat(3,1fr); gap:3px;}
 }
 </style>
 </head>
@@ -1750,7 +1727,7 @@ footer strong { color: var(--rosa); }
                   <option>Divisa en efectivo ($)</option>
                   <option>Transferencia en euros</option>
                   <option>Zelle</option>
-                  <option>Reserva + cuotas</option>
+                  <option>Binance USDT</option>
                 </select>
               </div>
               <div class="fg full">
@@ -1898,7 +1875,7 @@ function toggleFaq(q) {
 }
 
 // Form submit → Google Sheets
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbybcHvIHaLppE_8KFTebWejK0arh8jkPr3YYGG3cOxDePllVS1psDPAQX4xLwQkPqe1KA/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyXciQiVPsznSESMs6d1eJc5t9KIA8mYOsldkJ8UL9Ge8ETebi4tPgsNvStHpX5ds-zzQ/exec";
 
 function toggleNoSocios(val) {
   const div = document.getElementById('no-socios-fields');
