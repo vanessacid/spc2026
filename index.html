@@ -919,6 +919,7 @@ footer strong { color: var(--rosa); }
   #cta{padding:80px 40px;}
   .stats-row{justify-content:center;}
   .stat{min-width:100px;}
+  #no-socios-fields > div { grid-template-columns:1fr 1fr; }
 }
 
 /* ── MOBILE ── */
@@ -1030,34 +1031,12 @@ footer strong { color: var(--rosa); }
 
   /* Galería */
   .galeria-grid{grid-template-columns:repeat(3,1fr); gap:4px;}
+
+  /* No socios campos */
+  #no-socios-fields > div { grid-template-columns:1fr !important; }
+  #no-socios-fields .fg { margin:0; }
 }
 
-  /* Equipo */
-  .equipo-visual img{width:180px;}
-  .confianza-card{padding:16px;}
-  .confianza-ttl{font-size:0.88rem;}
-
-  /* Show + Testimonios */
-  .show-banner{padding:32px 20px; border-radius:20px;}
-  .show-banner h3{font-size:1.3rem;}
-  .testi-grid{grid-template-columns:1fr; gap:14px;}
-  .wamsg{padding:20px;}
-  .wamsg.featured{grid-column:span 1;}
-  .wa-text{font-size:0.88rem;}
-
-  /* Precios */
-  .precios-grid{grid-template-columns:1fr;}
-  .precio-card.star{grid-column:span 1;}
-  .precio-badge-top{font-size:0.7rem;}
-  .p-amount{font-size:2.4rem;}
-  .extras-row{flex-direction:column;}
-
-  /* Reserva */
-  .reserva-block{padding:32px 20px; border-radius:20px; text-align:center;}
-  .reserva-left h3{font-size:1.4rem;}
-  .pasos{flex-direction:column; align-items:center; gap:10px;}
-  .paso+.paso::before{content:none;}
-  .paso-txt{max-width:none; text-align:center;}
   .btn-reserva-big{padding:16px 28px; font-size:1rem; white-space:normal; text-align:center;}
 
   /* Formulario */
@@ -1679,8 +1658,8 @@ footer strong { color: var(--rosa); }
                 <input type="text" id="f_nombre" placeholder="Nombre y apellido completo" required>
               </div>
               <div class="fg">
-                <label>🪪 Cédula * <span style="font-weight:400;color:var(--muted);font-size:0.78rem;">(si la niña no tiene, coloca la del representante)</span></label>
-                <input type="text" id="f_cedula" placeholder="Número de cédula" required>
+                <label>🪪 Cédula de la niña * <span style="font-weight:400;color:var(--muted);font-size:0.78rem;">(incluir V o E al inicio · si no tiene, coloca la del representante)</span></label>
+                <input type="text" id="f_cedula" placeholder="Ej: V-12345678" required>
               </div>
               <div class="fg">
                 <label>🎂 Fecha de nacimiento *</label>
@@ -1693,6 +1672,10 @@ footer strong { color: var(--rosa); }
               <div class="fg">
                 <label>👤 Nombre del representante *</label>
                 <input type="text" id="f_representante" placeholder="Nombre y apellido" required>
+              </div>
+              <div class="fg">
+                <label>🪪 Cédula del representante * <span style="font-weight:400;color:var(--muted);font-size:0.78rem;">(incluir V o E al inicio)</span></label>
+                <input type="text" id="f_cedula_rep" placeholder="Ej: V-12345678" required>
               </div>
               <div class="fg">
                 <label>📧 Correo electrónico *</label>
@@ -1708,7 +1691,7 @@ footer strong { color: var(--rosa); }
               </div>
               <div class="fg full">
                 <label>🏛️ ¿Son socios de la Hermandad Gallega? *</label>
-                <select id="f_socios" required>
+                <select id="f_socios" required onchange="toggleNoSocios(this.value)">
                   <option value="">Selecciona</option>
                   <option>Sí, somos socios</option>
                   <option>No somos socios</option>
@@ -1718,15 +1701,36 @@ footer strong { color: var(--rosa); }
                 <label>🔢 Nº de socio *</label>
                 <input type="text" id="f_numsocio" placeholder="Número de socio (si no es socio escriba N/A)" required>
               </div>
+
+              <!-- CAMPOS NO SOCIOS -->
+              <div id="no-socios-fields" class="fg full" style="display:none;grid-column:1/-1;background:#FFF0FB;border-radius:14px;padding:16px;border:2px solid #FF3DAA;">
+                <p style="font-family:var(--font);font-weight:800;font-size:0.88rem;color:#FF3DAA;margin-bottom:12px;">🏛️ Datos para ingreso al club — No socias HG</p>
+                <p style="font-family:var(--font);font-size:0.8rem;color:var(--muted);margin-bottom:16px;">Por favor indica el nombre completo y cédula de los dos representantes que ingresarán al club con la niña.</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                  <div class="fg" style="margin:0">
+                    <label>👤 Representante 1 — Nombre completo *</label>
+                    <input type="text" id="f_rep1_nombre" placeholder="Nombre y apellido completo">
+                  </div>
+                  <div class="fg" style="margin:0">
+                    <label>🪪 Representante 1 — Cédula * <span style="font-weight:400;font-size:0.75rem;">(V o E)</span></label>
+                    <input type="text" id="f_rep1_cedula" placeholder="Ej: V-12345678">
+                  </div>
+                  <div class="fg" style="margin:0">
+                    <label>👤 Representante 2 — Nombre completo *</label>
+                    <input type="text" id="f_rep2_nombre" placeholder="Nombre y apellido completo">
+                  </div>
+                  <div class="fg" style="margin:0">
+                    <label>🪪 Representante 2 — Cédula * <span style="font-weight:400;font-size:0.75rem;">(V o E)</span></label>
+                    <input type="text" id="f_rep2_cedula" placeholder="Ej: V-12345678">
+                  </div>
+                </div>
+              </div>
               <div class="fg full" style="width:100%;grid-column:1/-1;">
                 <label>📅 ¿Qué semanas asistirá? * <span style="font-weight:400;color:var(--muted)">(puedes marcar varias)</span></label>
                 <div class="check-group" id="tiempo-checks" style="display:flex;flex-direction:column;gap:10px;width:100%;">
-                  <label class="check-opt"><input type="checkbox" name="tiempo" value="🌟 Pretemporada (3 al 7 de agosto)"> 🌟 Pretemporada (3 al 7 de agosto)</label>
-                  <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 1 (10 al 14 de agosto)"> Semana 1 (10 al 14 de agosto)</label>
                   <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 2 (17 al 21 de agosto)"> Semana 2 (17 al 21 de agosto)</label>
                   <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 3 (24 al 28 de agosto)"> Semana 3 (24 al 28 de agosto)</label>
                   <label class="check-opt"><input type="checkbox" name="tiempo" value="Semana 4 (1 al 4 de septiembre)"> Semana 4 (1 al 4 de septiembre)</label>
-                  <label class="check-opt"><input type="checkbox" name="tiempo" value="Temporada completa (4 semanas)"> ⭐ Temporada completa (4 semanas)</label>
                 </div>
                 <p id="tiempo-error" style="display:none;color:#FF3DAA;font-size:0.82rem;margin-top:6px;font-family:var(--font);font-weight:700;">⚠️ Por favor selecciona al menos una semana.</p>
               </div>
@@ -1896,6 +1900,17 @@ function toggleFaq(q) {
 // Form submit → Google Sheets
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxMPCslZwp0gQrh-liS1QQTok2aic6gDp0ST0H5pky_WSC5odNggg5QTPCl2JFNlBJSDQ/exec";
 
+function toggleNoSocios(val) {
+  const div = document.getElementById('no-socios-fields');
+  if (val === 'No somos socios') {
+    div.style.display = 'block';
+    div.querySelectorAll('input').forEach(i => i.required = true);
+  } else {
+    div.style.display = 'none';
+    div.querySelectorAll('input').forEach(i => { i.required = false; i.value = ''; });
+  }
+}
+
 async function submitForm(e) {
   e.preventDefault();
 
@@ -1915,6 +1930,7 @@ async function submitForm(e) {
   const data = {
     nombre:          document.getElementById('f_nombre')?.value || '',
     cedula:          document.getElementById('f_cedula')?.value || '',
+    cedulaRep:       document.getElementById('f_cedula_rep')?.value || '',
     fechaNacimiento: document.getElementById('f_nacimiento')?.value || '',
     edad:            document.getElementById('f_edad')?.value || '',
     representante:   document.getElementById('f_representante')?.value || '',
@@ -1923,6 +1939,10 @@ async function submitForm(e) {
     telefono2:       document.getElementById('f_tel2')?.value || '',
     socios:          document.getElementById('f_socios')?.value || '',
     numSocio:        document.getElementById('f_numsocio')?.value || '',
+    rep1Nombre:      document.getElementById('f_rep1_nombre')?.value || '',
+    rep1Cedula:      document.getElementById('f_rep1_cedula')?.value || '',
+    rep2Nombre:      document.getElementById('f_rep2_nombre')?.value || '',
+    rep2Cedula:      document.getElementById('f_rep2_cedula')?.value || '',
     tiempo:          Array.from(document.querySelectorAll('input[name="tiempo"]:checked')).map(c=>c.value).join(', '),
     nadar:           document.getElementById('f_nadar')?.value || '',
     pago:            document.getElementById('f_pago')?.value || '',
