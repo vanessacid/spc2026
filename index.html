@@ -216,7 +216,8 @@ footer a{color:#fff;font-weight:600}
         <li>🕑 5:30 a 7:00 pm</li>
         <li>📍 Hermandad Gallega de Caracas</li>
         <li>👧 Niñas, adolescentes y mamis · a partir de 4 años</li>
-        <li>💸 Socias de la Hermandad Gallega: <b>$25</b> · No socias: <b>$30</b><br><small>(pago a tasa BCV)</small></li>
+        <li>💸 Pago en Bs (tasa BCV): socias <b>$30</b> · no socias <b>$35</b></li>
+        <li>🪙 <b>Promo pago con Binance:</b> socias <b>$25</b> · no socias <b>$30</b></li>
       </ul>
       <form id="f-glitter">
         <div class="row">
@@ -232,6 +233,14 @@ footer a{color:#fff;font-weight:600}
           <div><label>¿Es socia de la Hermandad Gallega?</label>
             <select name="socios" id="socio-sel" required><option value="">Selecciona…</option><option>Sí</option><option>No</option></select></div>
           <div id="socio-num" style="display:none"><label>N° de socio</label><input name="numSocio"></div>
+        </div>
+        <div><label>Forma de pago</label>
+          <select name="pago" required><option value="">Selecciona…</option><option>Bs - Pago móvil (tasa BCV)</option><option>Binance (promo)</option></select></div>
+        <div id="ingreso" style="display:none;background:#fff0fa;border-radius:16px;padding:14px">
+          <label>Si no son socias: datos para el ingreso (máximo 3 personas por inscripción)</label>
+          <div class="row" style="margin-top:8px"><input name="ing1n" placeholder="Nombre y apellido 1"><input name="ing1c" placeholder="Cédula 1"></div>
+          <div class="row" style="margin-top:8px"><input name="ing2n" placeholder="Nombre y apellido 2 (opcional)"><input name="ing2c" placeholder="Cédula 2"></div>
+          <div class="row" style="margin-top:8px"><input name="ing3n" placeholder="Nombre y apellido 3 (opcional)"><input name="ing3c" placeholder="Cédula 3"></div>
         </div>
         <div><label>Alergias o algo que debamos saber (opcional)</label><input name="alergias"></div>
         <input type="hidden" name="actividad" value="Modo SPC - Glitter Party">
@@ -326,7 +335,7 @@ function wire(id, okId){
     document.getElementById(okId).style.display='block';
   });
 }
-document.getElementById('socio-sel').addEventListener('change',e=>{document.getElementById('socio-num').style.display=e.target.value==='Sí'?'block':'none'});
+document.getElementById('socio-sel').addEventListener('change',e=>{document.getElementById('socio-num').style.display=e.target.value==='Sí'?'block':'none';var n=e.target.value==='No';document.getElementById('ingreso').style.display=n?'block':'none';document.querySelector('[name=ing1n]').required=n;document.querySelector('[name=ing1c]').required=n;});
 wire('f-glitter','ok-glitter');wire('f-aviso','ok-aviso');
 </script>
 </body>
