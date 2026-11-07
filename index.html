@@ -28,7 +28,7 @@ section{padding:72px 0;position:relative}
 /* nav */
 nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #f1defa}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-nav img{height:44px;width:44px;object-fit:cover;border-radius:50%}
+nav img{height:34px;width:auto}
 nav ul{display:flex;gap:22px;list-style:none;font-weight:600;font-size:.93rem}
 nav a{text-decoration:none}
 nav ul a:hover{color:var(--pink)}
@@ -39,7 +39,7 @@ nav .btn{padding:9px 18px;font-size:.88rem}
 .hero:before,.hero:after{content:"✦";position:absolute;font-size:4rem;opacity:.35;animation:tw 3s infinite}
 .hero:before{left:6%;top:14%}.hero:after{right:8%;bottom:18%;animation-delay:1.2s}
 @keyframes tw{50%{transform:scale(1.4) rotate(20deg);opacity:.8}}
-.hero .logo{width:min(250px,60vw);margin:0 auto 10px;border-radius:32px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.hero .logo{width:min(380px,78vw);margin:0 auto 10px;filter:drop-shadow(0 10px 24px rgba(60,0,100,.35))}
 .hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;margin:18px 0 12px}
 .hero p{font-size:1.15rem;max-width:620px;margin:0 auto 26px;opacity:.96}
 .hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -107,7 +107,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink)}
 .gal img{border-radius:18px;margin-bottom:12px;width:100%}
 /* footer */
 footer{background:#2a0a47;color:#e9d7ff;text-align:center;padding:46px 20px}
-footer img{width:90px;margin:0 auto 12px;border-radius:50%}
+footer img{width:130px;margin:0 auto 12px}
 footer a{color:#fff;font-weight:600}
 .wa{position:fixed;right:16px;bottom:16px;z-index:60;background:#25d366;color:#fff;border-radius:999px;padding:13px 20px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 </style>
@@ -115,7 +115,7 @@ footer a{color:#fff;font-weight:600}
 <body>
 
 <nav><div class="wrap">
-  <a href="#inicio"><img src="img/logo-spc.jpg" alt="SPC"></a>
+  <a href="#inicio"><img src="img/logo-spc-color.png" alt="SPC"></a>
   <ul>
     <li><a href="#que-es">Qué es SPC</a></li>
     <li><a href="#plan">Plan Vacacional</a></li>
@@ -127,7 +127,7 @@ footer a{color:#fff;font-weight:600}
 </div></nav>
 
 <header class="hero" id="inicio"><div class="wrap">
-  <img class="logo" src="img/logo-spc.jpg" alt="Solo Para Chicas">
+  <img class="logo" src="img/logo-spc-blanco.png" alt="Solo Para Chicas">
   <h1>Donde las niñas brillan ✨</h1>
   <p>Vacaciones, talleres y fiestas pensadas solo para chicas. Amistad, creatividad, estilo y recuerdos para toda la vida. Desde 2012.</p>
   <div class="cta">
@@ -213,10 +213,10 @@ footer a{color:#fff;font-weight:600}
       <h3 style="font-size:1.5rem">Datos del taller</h3>
       <ul>
         <li>📅 Viernes 27 de noviembre</li>
-        <li>🕑 Hora: <span class="pend">por confirmar</span></li>
+        <li>🕑 5:30 a 7:00 pm</li>
         <li>📍 Hermandad Gallega de Caracas</li>
         <li>👧 Niñas, adolescentes y mamis · a partir de 4 años</li>
-        <li>💸 Precio: <span class="pend">por confirmar</span></li>
+        <li>💸 Socias de la Hermandad Gallega: <b>$25</b> · No socias: <b>$30</b><br><small>(pago a tasa BCV)</small></li>
       </ul>
       <form id="f-glitter">
         <div class="row">
@@ -300,7 +300,7 @@ footer a{color:#fff;font-weight:600}
 </div></section>
 
 <footer>
-  <img src="img/logo-spc.jpg" alt="SPC">
+  <img src="img/logo-spc-blanco.png" alt="SPC">
   <p><b>Solo Para Chicas</b> · Desde 2012</p>
   <p style="margin:8px 0">WhatsApp <a href="https://wa.me/584122192602">+58 412-2192602</a> · Instagram <span class="pend">@usuario por confirmar</span></p>
   <p>Una vez chica, siempre SPC. 💜</p>
