@@ -96,6 +96,14 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:600px){.row{grid-template-columns:1fr}}
 .msg{display:none;padding:14px;border-radius:14px;background:#e8ffe9;font-weight:600}
+/* info glitter */
+.info{background:var(--soft);border:2px solid #ffd3f0;border-radius:22px;padding:20px;margin:18px 0 6px}
+.info h4{font-family:"Baloo 2",Poppins,sans-serif;font-size:1.35rem;margin-bottom:10px;color:var(--purple)}
+.info .it{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed #f0c4e6;font-size:.93rem}
+.info .it:last-of-type{border-bottom:0}
+.info .it .e{font-size:1.5rem;line-height:1.2;flex:none}
+.info .it.warn{background:#fff7c2;border:1px dashed #c9a400;border-radius:14px;padding:10px 12px;margin:6px 0}
+.info .fin{text-align:center;font-weight:700;color:var(--pink);margin-top:10px}
 /* party */
 .party{background:var(--soft)}
 .ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:30px}
@@ -219,6 +227,29 @@ footer a{color:#fff;font-weight:600}
         <li>💸 Pago en Bs (tasa BCV): socias <b>$30</b> · no socias <b>$35</b></li>
         <li>🪙 <b>Promo pago con Binance:</b> socias <b>$25</b> · no socias <b>$30</b></li>
       </ul>
+
+      <div class="info">
+        <h4>Antes de inscribirte, lee esto 💖</h4>
+
+        <div class="it"><span class="e">✨</span><div><b>¿Qué es Glitter Party?</b><br>Es el primer taller de <b>Modo SPC</b>, la parte de <b>Solo Para Chicas</b> que vive todo el año. Así las amigas del plan vacacional siguen juntas, con presencia y actividades también fuera de las vacaciones, y la magia de SPC no se acaba.</div></div>
+
+        <div class="it"><span class="e">🎨</span><div><b>¿Qué vamos a hacer?</b><br>Un taller creativo lleno de brillo, color y mucha amistad. Cada niña decora una <b>pieza sorpresa con muchísimo brillo</b>, se la lleva a casa y la pasa súper entre amigas, como solo lo hacemos en SPC.</div></div>
+
+        <div class="it"><span class="e">👯‍♀️</span><div><b>Ven con tu mejor amiga</b><br>Pueden venir niñas, adolescentes y mamis, <b>a partir de 4 años</b>. Invita a tu mejor amiga, a tus primas y a tus compañeras, que cada una se inscribe con su formulario. 💜</div></div>
+
+        <div class="it"><span class="e">🏛️</span><div><b>¿Dónde es? La Hermandad Gallega de Caracas</b><br>Es el club donde hacemos todos nuestros planes vacacionales. El taller es el <b>viernes 27 de noviembre, de 5:30 a 7:00 pm</b>.</div></div>
+
+        <div class="it"><span class="e">🎟️</span><div><b>Socias y no socias son bienvenidas</b><br>Pueden venir las <b>socias</b> de la Hermandad Gallega y también las que <b>no son socias</b>. La diferencia está en el precio y en el ingreso al club (te lo explicamos aquí abajo).</div></div>
+
+        <div class="it warn"><span class="e">⏰</span><div><b>Si no eres socia: llega con 30 minutos de anticipación</b><br>Por el control de acceso al club, las familias no socias deben llegar <b>al menos 30 minutos antes</b> (a las 5:00 pm) para ingresar con calma y que el taller empiece puntual.</div></div>
+
+        <div class="it warn"><span class="e">🪪</span><div><b>Datos para el ingreso (no socias)</b><br>Cada niña puede entrar con <b>hasta 2 representantes</b>. Al elegir <i>"No soy socia"</i> en el formulario, te pediremos el <b>nombre y la cédula</b> de quienes van a ingresar, para dejarlos registrados en la puerta del club. Si llegan en vehículo, también se usan estos datos para el acceso.</div></div>
+
+        <div class="it"><span class="e">💸</span><div><b>¿Cómo se paga?</b><br>Al inscribirte te llega un <b>correo con los datos de pago</b> (pago móvil en Bs a tasa BCV o Binance con promo). Envías el comprobante respondiendo ese correo y el cupo queda reservado. <b>Los cupos son limitados.</b></div></div>
+
+        <p class="fin">Cuando estés lista, llena el formulario 👇</p>
+      </div>
+
       <form id="f-glitter">
         <div class="row">
           <div><label>Nombre de la niña</label><input name="nina" required></div>
