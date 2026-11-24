@@ -161,6 +161,37 @@ label small{font-weight:400;opacity:.75}
 .nav-close h3{font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:6px}
 .nav-close .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0 8px}
 .nav-close .small{font-size:.9rem;opacity:.85}
+.agenda{max-width:940px;margin:46px auto 0}
+.agenda h3{text-align:center;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:8px}
+.agenda>p{text-align:center;max-width:690px;margin:0 auto 20px}
+.agenda-list{display:grid;gap:4px}
+.agenda-list img{width:100%;height:auto}
+.day-mobile{display:none}
+.agenda-notes{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:20px 24px;max-width:860px;margin:22px auto 0}
+.agenda-notes ul{padding-left:20px;margin-top:8px}
+.agenda-notes li{margin:6px 0}
+@media(max-width:640px){
+ section{padding:48px 0}
+ .hero.xmas{padding:24px 0 60px}
+ .hero.xmas .hero-sub{font-size:1rem}
+ .hero-doll img{width:min(220px,58vw)}
+ .nav-doll{order:0}.nav-doll img{width:min(230px,55vw)}
+ .navidad{padding:18px}
+ .nav-det{font-size:.9rem}
+ .nav-det li{padding:7px 0}
+ .tabs{gap:8px}.tab{font-size:.9rem;padding:12px 7px}.tab small{font-size:.68rem}
+ .panel{padding:18px}.panel .info{padding:16px}
+ .btn-big{font-size:1rem;padding:15px 20px}
+ .agenda-list{gap:12px}.agenda-list img{display:none}
+ .day-mobile{display:flex;gap:12px;align-items:center;background:#fff;color:var(--ink);border-radius:18px;padding:14px;box-shadow:0 9px 18px rgba(30,0,20,.3)}
+ .day-mobile:nth-of-type(5){background:#ffe1ed}
+ .day-mobile time{flex:none;display:grid;place-items:center;background:#f0d6fa;color:#590039;border-radius:13px;font-weight:800;line-height:1.05;min-width:56px;min-height:56px;font-size:.75rem}
+ .day-mobile time strong{font-size:1.5rem}
+ .day-mobile b{display:block;font-size:.96rem;line-height:1.2}
+ .day-mobile span{display:block;font-size:.82rem;line-height:1.35;margin-top:3px}
+ .agenda-notes{padding:17px;font-size:.9rem}
+ input,select,textarea{font-size:16px}
+}
 /* info glitter */
 .info{background:var(--soft);border:2px solid #ffc9dc;border-radius:22px;padding:20px;margin:18px 0 6px}
 .info h4{font-family:"Baloo 2",Poppins,sans-serif;font-size:1.35rem;margin-bottom:10px;color:var(--purple)}
@@ -278,6 +309,32 @@ footer a{color:#fff;font-weight:600}
     <p>¿Dudas? Escríbenos por WhatsApp <a href="https://wa.me/584122192602" target="_blank" rel="noopener">+58 412 219 2602</a> · <a href="mailto:plansoloparachicas@gmail.com">plansoloparachicas@gmail.com</a></p>
   </div>
 
+  <div class="agenda">
+    <h3>Un plan distinto cada día ✨</h3>
+    <p>Retos, cocina, cine, spa y una fiesta para cerrar la temporada juntas.</p>
+    <div class="agenda-list">
+      <img src="img/agenda/jueves-17.webp" alt="Jueves 17: Arranca la Navidad. Retos y carrera de envolver regalos" loading="lazy">
+      <div class="day-mobile"><time datetime="2026-12-17">JUE<strong>17</strong></time><div><b>🎁 ¡Arranca la Navidad!</b><span>Retos y carrera de envolver regalos.</span></div></div>
+      <img src="img/agenda/viernes-18.webp" alt="Viernes 18: Pijamas, spa y cine. De noche, pijamada y Espíritu de la Navidad" loading="lazy">
+      <div class="day-mobile"><time datetime="2026-12-18">VIE<strong>18</strong></time><div><b>🌙 Pijamas + spa + cine</b><span>De noche: pijamada y Espíritu de la Navidad.</span></div></div>
+      <img src="img/agenda/lunes-21.webp" alt="Lunes 21: Chef navideñas. Decoramos galletas de jengibre" loading="lazy">
+      <div class="day-mobile"><time datetime="2026-12-21">LUN<strong>21</strong></time><div><b>🍪 Chef navideñas</b><span>Decoramos galletas de jengibre.</span></div></div>
+      <img src="img/agenda/martes-22.webp" alt="Martes 22: El Grinch contra SPC. Misiones e Improchicas navideña" loading="lazy">
+      <div class="day-mobile"><time datetime="2026-12-22">MAR<strong>22</strong></time><div><b>💚 El Grinch contra SPC</b><span>Misiones e Improchicas navideña.</span></div></div>
+      <img src="img/agenda/miercoles-23.webp" alt="Miércoles 23: Glitter Party. Maquillaje, manualidades y sorpresas" loading="lazy">
+      <div class="day-mobile"><time datetime="2026-12-23">MIÉ<strong>23</strong></time><div><b>✨ Glitter Party</b><span>Maquillaje, manualidades y sorpresas.</span></div></div>
+    </div>
+  </div>
+  <div class="agenda-notes">
+    <b>Qué llevar y cómo prepararse</b>
+    <ul>
+      <li>Hidratación, ropa cómoda y almuerzo para cada jornada.</li>
+      <li>El viernes 18 tendremos pijamada nocturna. El horario de esa actividad y sus indicaciones se comunicarán por separado a las familias inscritas.</li>
+      <li>Cuéntanos las alergias alimentarias o indicaciones médicas en el formulario, especialmente para el día de galletas.</li>
+    </ul>
+  </div>
+  <div class="center" style="margin-top:26px"><a class="btn btn-w btn-big" href="#navidad">Reservar el plan completo 🎟️</a></div>
+
   <p class="center" style="margin-top:34px;opacity:.85;font-size:.92rem">☀️ Plan Vacacional Verano: agosto a septiembre · 8:00 a 16:00 · cierre con Show Final. Las inscripciones del verano 2026 ya cerraron. ¡Prepárate para el próximo!</p>
 </div></section>
 
@@ -288,8 +345,8 @@ footer a{color:#fff;font-weight:600}
     <p class="lead">Elige la actividad, llena el formulario y te llega un correo con los datos de pago. Con el comprobante, tu cupo queda reservado.</p>
   </div>
   <div class="tabs">
-    <button class="tab on" data-t="navidad" type="button">🎄 SPC Navidad<small>17–23 dic · plan completo</small></button>
-    <button class="tab" data-t="glitter" type="button">💎 Glitter Party<small>Vie 27 nov · taller</small></button>
+    <button class="tab on" data-t="navidad" type="button" aria-controls="p-navidad" aria-pressed="true">🎄 SPC Navidad<small>17–23 dic · plan completo</small></button>
+    <button class="tab" data-t="glitter" type="button" aria-controls="p-glitter" aria-pressed="false">💎 Glitter Party<small>Vie 27 nov · taller</small></button>
   </div>
 
   <div class="panel on" id="p-navidad">
@@ -318,7 +375,7 @@ footer a{color:#fff;font-weight:600}
         </div>
         <div class="row">
           <div><label>🎂 Fecha de nacimiento *</label><input name="fechaNac" type="date" required></div>
-          <div><label>👧 Edad *</label><input name="edad" type="number" min="3" max="17" required></div>
+          <div><label>👧 Edad *</label><input name="edad" type="number" min="4" max="14" required></div>
         </div>
         <div class="row">
           <div><label>👤 Nombre del representante *</label><input name="representante" required></div>
@@ -327,7 +384,7 @@ footer a{color:#fff;font-weight:600}
         <div><label>📧 Correo electrónico *</label><input name="correo" type="email" required></div>
         <div class="row">
           <div><label>📱 Teléfono 1 (WhatsApp) *</label><input name="telefono" type="tel" required></div>
-          <div><label>📱 Teléfono 2 *</label><input name="telefono2" type="tel" required></div>
+          <div><label>📱 Teléfono 2 <small>(opcional)</small></label><input name="telefono2" type="tel"></div>
         </div>
         <div class="row">
           <div><label>🏛️ ¿Son socios de la Hermandad Gallega? *</label>
@@ -336,9 +393,9 @@ footer a{color:#fff;font-weight:600}
         </div>
         <div class="ingreso" style="display:none">
           <b>🏛️ Datos para el ingreso al club (no socias)</b>
-          <p style="font-size:.84rem;margin:4px 0 10px">Indica el nombre completo y la cédula de los <b>2 representantes</b> que ingresarán al club con la niña.</p>
+          <p style="font-size:.84rem;margin:4px 0 10px">Indica el nombre completo y la cédula de quienes ingresarán al club con la niña (hasta 2 representantes).</p>
           <div class="row"><div><label>👤 Representante 1 — nombre completo *</label><input name="rep1n" data-req></div><div><label>🪪 Representante 1 — cédula *</label><input name="rep1c" data-req></div></div>
-          <div class="row" style="margin-top:8px"><div><label>👤 Representante 2 — nombre completo *</label><input name="rep2n" data-req></div><div><label>🪪 Representante 2 — cédula *</label><input name="rep2c" data-req></div></div>
+          <div class="row" style="margin-top:8px"><div><label>👤 Representante 2 — nombre completo <small>(opcional)</small></label><input name="rep2n"></div><div><label>🪪 Representante 2 — cédula <small>(opcional)</small></label><input name="rep2c"></div></div>
         </div>
         <div class="row">
           <div><label>🏊 ¿Sabe nadar? *</label><select name="nadar" required><option value="">Selecciona…</option><option>Sí</option><option>No</option></select></div>
@@ -516,7 +573,6 @@ footer a{color:#fff;font-weight:600}
 <a class="wa" href="https://wa.me/584122192602" target="_blank" rel="noopener">💬 WhatsApp</a>
 
 <script>
-// Pega aquí la URL /exec de tu Apps Script (cada redeploy genera una nueva)
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_bztE5zLGf6J1be2aQ_VE2kUibm0wD79rL-YpvqpIvisSKS71ifXNhNucj-HafETH/exec";
 function wire(id, okId){
   const f=document.getElementById(id);
@@ -524,15 +580,30 @@ function wire(id, okId){
     e.preventDefault();
     const d=Object.fromEntries(new FormData(f));
     d.fecha=new Date().toLocaleString('es-VE');
+    const button=f.querySelector('button[type="submit"]');
+    button.disabled=true;
+    button.textContent='Enviando…';
+    f.querySelector('.error')?.remove();
     try{
-      if(SCRIPT_URL.startsWith('http')){
-        await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(d)});
-      }
-    }catch(_){}
-    f.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);
-    document.getElementById(okId).style.display='block';
+      await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(d)});
+      document.getElementById(okId).style.display='block';
+    }catch(_){
+      const msg=document.createElement('p');
+      msg.className='error';msg.setAttribute('role','alert');
+      msg.textContent='No pudimos enviar la inscripción. Revisa tu conexión e inténtalo de nuevo.';
+      msg.style.cssText='color:#a8063a;font-weight:700';
+      button.after(msg);
+    }finally{
+      button.disabled=false;
+      button.textContent=id==='f-aviso'?'Avísame 💜':'¡Reservar mi cupo! 🎟️';
+    }
   });
 }
+// Asocia cada rótulo con su control para que tocarlo enfoque el campo en móvil.
+document.querySelectorAll('form label').forEach((label,i)=>{
+  const control=label.parentElement.querySelector('input,select,textarea');
+  if(control){control.id ||= 'campo-'+i;label.htmlFor=control.id}
+});
 document.querySelectorAll('form').forEach(f=>{
   const sel=f.querySelector('.socio-sel'); if(!sel) return;
   sel.addEventListener('change',()=>{
@@ -545,7 +616,7 @@ document.querySelectorAll('form').forEach(f=>{
   });
 });
 function showTab(t){
-  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('.tab').forEach(b=>{const on=b.dataset.t===t;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on))});
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+t));
 }
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.t)));
