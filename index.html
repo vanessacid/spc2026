@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--pink:#ff3fb4;--pink2:#ff7ad1;--purple:#8b3dff;--purple2:#b56bff;--ink:#2a0a47;--soft:#fff0fa;--lav:#f3eaff;--gold:#ffd54a}
+:root{--pink:#ff3fb4;--pink2:#ff7ad1;--purple:#a8063a;--purple2:#d1104f;--ink:#3a0614;--soft:#fff0f5;--lav:#fdeaf0;--gold:#ffd54a}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55;overflow-x:hidden}
@@ -21,12 +21,12 @@ section{padding:72px 0;position:relative}
 .btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .15s}
 .btn:hover{transform:translateY(-2px) scale(1.03)}
 .btn-w{background:#fff;color:var(--purple)}
-.btn-p{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;box-shadow:0 8px 20px rgba(139,61,255,.3)}
+.btn-p{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;box-shadow:0 8px 20px rgba(138,2,40,.35)}
 .btn-o{border:2px solid #fff;color:#fff;background:transparent}
 .tag{display:inline-block;background:var(--gold);color:var(--ink);font-weight:700;font-size:.78rem;padding:5px 12px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
 .pend{background:#fff7c2;border:1px dashed #c9a400;border-radius:8px;padding:1px 7px;font-size:.85em;font-weight:600;color:#7a6200}
 /* nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #f1defa}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #f6d3df}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
 nav img{height:34px;width:auto}
 nav ul{display:flex;gap:22px;list-style:none;font-weight:600;font-size:.93rem}
@@ -35,7 +35,7 @@ nav ul a:hover{color:var(--pink)}
 nav .btn{padding:9px 18px;font-size:.88rem}
 @media(max-width:820px){nav ul{display:none}}
 /* hero */
-.hero{background:linear-gradient(160deg,#ff3fb4 0%,#c13fff 55%,#7a3dff 100%);color:#fff;text-align:center;padding:60px 0 90px;overflow:hidden}
+.hero{background:linear-gradient(160deg,#a50d45 0%,#8a0228 50%,#5e0119 100%);color:#fff;text-align:center;padding:60px 0 90px;overflow:hidden}
 .hero:before,.hero:after{content:"✦";position:absolute;font-size:4rem;opacity:.35;animation:tw 3s infinite}
 .hero:before{left:6%;top:14%}.hero:after{right:8%;bottom:18%;animation-delay:1.2s}
 @keyframes tw{50%{transform:scale(1.4) rotate(20deg);opacity:.8}}
@@ -52,9 +52,9 @@ h2{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;margin:6px 0 14px}
 /* 3 lines */
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
 @media(max-width:860px){.three{grid-template-columns:1fr}}
-.card{border-radius:28px;padding:28px;background:var(--soft);border:2px solid #ffd3f0;display:flex;flex-direction:column;gap:12px;text-decoration:none;transition:transform .2s}
+.card{border-radius:28px;padding:28px;background:var(--soft);border:2px solid #ffc9dc;display:flex;flex-direction:column;gap:12px;text-decoration:none;transition:transform .2s}
 .card:hover{transform:translateY(-6px)}
-.card.v{background:var(--lav);border-color:#e0ccff}
+.card.v{background:var(--lav);border-color:#f2c3d3}
 .card .ico{font-size:2.4rem}
 .card h3{font-size:1.7rem}
 .card .more{margin-top:auto;font-weight:700;color:var(--purple)}
@@ -62,7 +62,7 @@ h2{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;margin:6px 0 14px}
 /* split */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 @media(max-width:860px){.split{grid-template-columns:1fr}}
-.photo{border-radius:28px;overflow:hidden;box-shadow:0 18px 40px rgba(139,61,255,.25);transform:rotate(-1.5deg)}
+.photo{border-radius:28px;overflow:hidden;box-shadow:0 18px 40px rgba(138,2,40,.25);transform:rotate(-1.5deg)}
 .photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.4}
 .stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px}
 .stats b{display:block;font-family:"Baloo 2";font-size:2.2rem;color:var(--pink);line-height:1}
@@ -73,12 +73,12 @@ h2{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;margin:6px 0 14px}
 .season{border-radius:28px;padding:30px;background:#fff;color:var(--ink);box-shadow:0 14px 34px rgba(0,0,0,.15)}
 .season h3{font-size:1.9rem;margin:10px 0}
 .season ul{list-style:none;margin:12px 0 18px}
-.season li{padding:6px 0;border-bottom:1px dashed #eadbff}
-.dark{background:linear-gradient(160deg,#4b1590,#8b3dff 60%,#d23fe0);color:#fff}
+.season li{padding:6px 0;border-bottom:1px dashed #f4d2de}
+.dark{background:linear-gradient(160deg,#5e0119,#8a0228 55%,#b0073a);color:#fff}
 .dark .kicker{color:var(--gold)}
 /* modo */
 .modo{background:var(--lav)}
-.event{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border-radius:32px;overflow:hidden;background:#fff;box-shadow:0 20px 50px rgba(139,61,255,.22);margin-top:34px}
+.event{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border-radius:32px;overflow:hidden;background:#fff;box-shadow:0 20px 50px rgba(138,2,40,.22);margin-top:34px}
 @media(max-width:860px){.event{grid-template-columns:1fr}}
 .event .l{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;padding:34px;display:flex;flex-direction:column;gap:10px;justify-content:center}
 .event .l h3{font-size:2.6rem}
@@ -87,19 +87,57 @@ h2{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;margin:6px 0 14px}
 .event li{padding:5px 0}
 .coming{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
 @media(max-width:700px){.coming{grid-template-columns:1fr}}
-.coming div{background:#fff;border:2px dashed #cfa8ff;border-radius:20px;padding:18px;text-align:center;font-weight:600}
+.coming div{background:#fff;border:2px dashed #e59ab3;border-radius:20px;padding:18px;text-align:center;font-weight:600}
 /* form */
 form{display:grid;gap:12px;margin-top:16px}
 label{font-weight:600;font-size:.88rem}
-input,select,textarea{width:100%;padding:12px 14px;border-radius:14px;border:2px solid #e3cfff;font:inherit;background:#fff}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:14px;border:2px solid #f2c3d3;font:inherit;background:#fff}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:600px){.row{grid-template-columns:1fr}}
 .msg{display:none;padding:14px;border-radius:14px;background:#e8ffe9;font-weight:600}
+/* hero navidad */
+.hero.xmas{position:relative;padding:26px 0 80px;text-align:left}
+.hero.xmas:before,.hero.xmas:after{content:none}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;position:relative;z-index:2}
+.hero-txt{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.hero.xmas .logo{width:150px;margin:0 0 2px;filter:drop-shadow(0 6px 14px rgba(60,0,100,.35))}
+.hero-titulo{width:min(560px,100%);filter:drop-shadow(0 6px 14px rgba(60,0,100,.35))}
+.hero.xmas .hero-sub{font-size:1.15rem;font-weight:600;max-width:520px;margin:0}
+.hero-badges{display:flex;flex-direction:column;gap:0;width:min(400px,100%)}
+.hero.xmas .cta{justify-content:flex-start;margin-top:6px}
+.hero-doll{text-align:center}
+.hero-doll img{width:min(330px,100%);margin:auto;filter:drop-shadow(0 20px 34px rgba(30,0,70,.5))}
+.snow{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.snow i{position:absolute;top:-10%;font-style:normal;color:#fff;opacity:.75;font-size:1.4rem;animation:fall 9s linear infinite}
+.snow i:nth-child(1){left:6%;animation-duration:10s}.snow i:nth-child(2){left:18%;font-size:1rem;animation-delay:2s}
+.snow i:nth-child(3){left:32%;animation-duration:12s;animation-delay:4s}.snow i:nth-child(4){left:47%;font-size:1.8rem;animation-delay:1s}
+.snow i:nth-child(5){left:61%;animation-duration:11s;animation-delay:5s}.snow i:nth-child(6){left:74%;font-size:1rem;animation-delay:3s}
+.snow i:nth-child(7){left:86%;animation-duration:13s;animation-delay:6s}.snow i:nth-child(8){left:94%;animation-delay:2.5s}
+@keyframes fall{to{transform:translateY(115vh) rotate(180deg)}}
+@media(max-width:860px){
+.hero-grid{grid-template-columns:1fr;text-align:center}
+.hero-txt{align-items:center}.hero.xmas .cta{justify-content:center}
+.hero-doll img{width:min(250px,62vw)}
+}
+/* navidad */
+.navidad{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:center;margin-top:38px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.22);border-radius:34px;padding:34px}
+@media(max-width:860px){.navidad{grid-template-columns:1fr;padding:22px}.nav-doll{order:-1}}
+.nav-info{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+.nav-titulo{width:min(560px,100%)}
+.nav-sub{font-size:1.1rem;font-weight:600;max-width:520px}
+.badges{display:flex;flex-direction:column;gap:2px;width:min(500px,100%)}
+.nav-txt{max-width:520px;opacity:.95}
+.nav-precio{width:min(500px,100%)}
+.nav-doll img{width:min(340px,58vw);margin:auto;filter:drop-shadow(0 18px 30px rgba(20,0,50,.45))}
+.nav-close{text-align:center;margin-top:34px}
+.nav-close h3{font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:6px}
+.nav-close .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0 8px}
+.nav-close .small{font-size:.9rem;opacity:.85}
 /* info glitter */
-.info{background:var(--soft);border:2px solid #ffd3f0;border-radius:22px;padding:20px;margin:18px 0 6px}
+.info{background:var(--soft);border:2px solid #ffc9dc;border-radius:22px;padding:20px;margin:18px 0 6px}
 .info h4{font-family:"Baloo 2",Poppins,sans-serif;font-size:1.35rem;margin-bottom:10px;color:var(--purple)}
-.info .it{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed #f0c4e6;font-size:.93rem}
+.info .it{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed #f4c3d3;font-size:.93rem}
 .info .it:last-of-type{border-bottom:0}
 .info .it .e{font-size:1.5rem;line-height:1.2;flex:none}
 .info .it.warn{background:#fff7c2;border:1px dashed #c9a400;border-radius:14px;padding:10px 12px;margin:6px 0}
@@ -107,14 +145,14 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink)}
 /* party */
 .party{background:var(--soft)}
 .ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:30px}
-.idea{background:#fff;border-radius:22px;padding:22px;border:2px solid #ffd3f0}
+.idea{background:#fff;border-radius:22px;padding:22px;border:2px solid #ffc9dc}
 .idea .e{font-size:2rem}
 .idea h3{font-size:1.3rem;margin:6px 0 4px}
 /* gallery */
 .gal{columns:4 200px;gap:12px;margin-top:30px}
 .gal img{border-radius:18px;margin-bottom:12px;width:100%}
 /* footer */
-footer{background:#2a0a47;color:#e9d7ff;text-align:center;padding:46px 20px}
+footer{background:#3a0614;color:#ffd9e5;text-align:center;padding:46px 20px}
 footer img{width:130px;margin:0 auto 12px}
 footer a{color:#fff;font-weight:600}
 .wa{position:fixed;right:16px;bottom:16px;z-index:60;background:#25d366;color:#fff;border-radius:999px;padding:13px 20px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
@@ -131,18 +169,28 @@ footer a{color:#fff;font-weight:600}
     <li><a href="#party">SPC Party</a></li>
     <li><a href="#galeria">Galería</a></li>
   </ul>
-  <a class="btn btn-p" href="#glitter">Glitter Party ✨</a>
+  <a class="btn btn-p" href="#plan">Navidad 🎄</a>
 </div></nav>
 
-<header class="hero" id="inicio"><div class="wrap">
-  <img class="logo" src="img/logo-spc-blanco.png" alt="Solo Para Chicas">
-  <h1>Donde las niñas brillan ✨</h1>
-  <p>Vacaciones, talleres y fiestas pensadas solo para chicas. Amistad, creatividad, estilo y recuerdos para toda la vida. Desde 2012.</p>
-  <div class="cta">
-    <a class="btn btn-w" href="#glitter">Inscríbete en Glitter Party</a>
-    <a class="btn btn-o" href="#plan">Plan Vacacional Diciembre</a>
+<header class="hero xmas" id="inicio">
+  <div class="snow" aria-hidden="true"><i>❄</i><i>✦</i><i>❄</i><i>✦</i><i>❄</i><i>❄</i><i>✦</i><i>❄</i></div>
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <img class="hero-titulo" src="img/nav-titulo.png" alt="Plan Vacacional Solo Para Chicas en Navidad">
+      <p class="hero-sub">🎄 Cinco días para compartir, crear, jugar y vivir la Navidad al estilo SPC.</p>
+      <div class="hero-badges">
+        <img src="img/nav-fecha.png" alt="17, 18, 21, 22 y 23 de diciembre">
+        <img src="img/nav-horario.png" alt="De 9:00 a. m. a 4:00 p. m.">
+        <img src="img/nav-lugar.png" alt="Hermandad Gallega de Venezuela (Caracas)">
+      </div>
+      <div class="cta">
+        <a class="btn btn-w" href="#plan">Quiero recibir la información</a>
+        <a class="btn btn-o" href="#glitter">Glitter Party · 27 nov ✨</a>
+      </div>
+    </div>
+    <div class="hero-doll"><img src="img/nav-muneca.webp" alt="Chica SPC con gorro navideño y un regalo"></div>
   </div>
-</div><div class="wave"></div></header>
+<div class="wave"></div></header>
 
 <section id="que-es"><div class="wrap">
   <div class="center">
@@ -170,33 +218,38 @@ footer a{color:#fff;font-weight:600}
   <div class="center">
     <div class="kicker">SPC Plan Vacacional</div>
     <h2>El plan que las niñas esperan todo el año</h2>
-    <p class="lead">Semanas llenas de baile, manualidades, juegos, deportes, sorpresas y un gran show final para las familias.</p>
+    <p class="lead">Un espacio para que las chicas disfruten sus vacaciones, hagan amigas y compartan experiencias juntas.</p>
   </div>
-  <div class="seasons">
-    <div class="season">
-      <span class="tag">Próximamente</span>
-      <h3>🎄 Plan Vacacional Diciembre</h3>
-      <ul>
-        <li>📅 Fechas: <span class="pend">por confirmar</span></li>
-        <li>🕗 Horario: <span class="pend">por confirmar</span></li>
-        <li>📍 Hermandad Gallega, Caracas</li>
-        <li>💸 Precios: <span class="pend">por confirmar</span></li>
-      </ul>
-      <p>Déjanos tu contacto y te avisamos primero cuando abramos cupos.</p>
-      <br><a class="btn btn-p" href="#avisame">Avísame cuando abra</a>
+
+  <div class="navidad">
+    <div class="nav-info">
+      <img class="nav-titulo" src="img/nav-titulo.png" alt="Plan Vacacional Solo Para Chicas en Navidad">
+      <p class="nav-sub">🎄 Cinco días para compartir, crear, jugar y vivir la Navidad al estilo SPC.</p>
+      <div class="badges">
+        <img src="img/nav-fecha.png" alt="17, 18, 21, 22 y 23 de diciembre">
+        <img src="img/nav-horario.png" alt="De 9:00 a. m. a 4:00 p. m.">
+        <img src="img/nav-lugar.png" alt="Hermandad Gallega de Venezuela (Caracas)">
+      </div>
+      <p class="nav-txt">Vuelve la temporada navideña de SPC: un espacio para que las chicas disfruten sus vacaciones, hagan amigas y compartan experiencias juntas.</p>
+      <img class="nav-precio" src="img/nav-precio.png" alt="Plan completo 5 días: 120 ref. pagando por Binance, 150 ref. en bolívares a tasa BCV">
+      <div class="nav-cta">
+        <a class="btn btn-w" href="#avisame">Quiero recibir la información</a>
+      </div>
     </div>
-    <div class="season">
-      <span class="tag" style="background:#e3cfff">Verano</span>
-      <h3>☀️ Plan Vacacional Verano</h3>
-      <ul>
-        <li>📅 Agosto a septiembre (4 semanas)</li>
-        <li>🕗 8:00 a 16:00</li>
-        <li>👧 Niñas de 4 a 14 años</li>
-        <li>🎤 Cierre con Show Final</li>
-      </ul>
-      <p>Las inscripciones del verano 2026 ya cerraron. ¡Prepárate para el próximo!</p>
-    </div>
+    <div class="nav-doll"><img src="img/nav-muneca.webp" alt="Chica SPC con gorro navideño y un regalo" loading="lazy"></div>
   </div>
+
+  <div class="nav-close">
+    <h3>¿Tu chica se viene a vivir la Navidad con SPC? 🎁</h3>
+    <p>Escríbenos <b>«NAVIDAD»</b> y te enviamos los detalles para inscribirla.</p>
+    <div class="cta">
+      <a class="btn btn-w" href="https://wa.me/584122192602?text=NAVIDAD" target="_blank" rel="noopener">💬 Escribir «NAVIDAD» por WhatsApp</a>
+      <a class="btn btn-o" href="mailto:plansoloparachicas@gmail.com">plansoloparachicas@gmail.com</a>
+    </div>
+    <p class="small">WhatsApp +58 412 219 2602</p>
+  </div>
+
+  <p class="center" style="margin-top:34px;opacity:.85;font-size:.92rem">☀️ Plan Vacacional Verano: agosto a septiembre · 8:00 a 16:00 · cierre con Show Final. Las inscripciones del verano 2026 ya cerraron. ¡Prepárate para el próximo!</p>
 </div></section>
 
 <section class="modo" id="modo"><div class="wrap">
@@ -207,10 +260,10 @@ footer a{color:#fff;font-weight:600}
       <h2>Modo SPC: la magia no se acaba</h2>
       <p class="lead">Actividades, eventos y fiestas: talleres creativos, day camps y encuentros especiales para que las chicas sigan juntas entre vacaciones. Cada mes, una nueva experiencia.</p>
     </div>
-    <div class="center"><video src="img/modo-spc.mp4" poster="img/modo-poster.jpg" autoplay muted loop playsinline controls preload="metadata" style="width:100%;max-width:300px;border-radius:28px;box-shadow:0 18px 40px rgba(139,61,255,.3)"></video></div>
+    <div class="center"><video src="img/modo-spc.mp4" poster="img/modo-poster.jpg" autoplay muted loop playsinline controls preload="metadata" style="width:100%;max-width:300px;border-radius:28px;box-shadow:0 18px 40px rgba(138,2,40,.35)"></video></div>
   </div>
 
-  <div class="center" style="margin-top:34px"><img src="img/glitter-1.jpg" alt="Glitter Party - Taller creativo, viernes 27 de noviembre, Hermandad Gallega de Caracas" style="max-width:460px;width:100%;margin:auto;border-radius:28px;box-shadow:0 18px 40px rgba(139,61,255,.25)"></div>
+  <div class="center" style="margin-top:34px"><img src="img/glitter-1.jpg" alt="Glitter Party - Taller creativo, viernes 27 de noviembre, Hermandad Gallega de Caracas" style="max-width:460px;width:100%;margin:auto;border-radius:28px;box-shadow:0 18px 40px rgba(138,2,40,.25)"></div>
   <div class="event" id="glitter" style="margin-top:28px">
     <div class="l">
       <span class="tag" style="align-self:flex-start">Vie 27 de noviembre · Cupos limitados</span>
@@ -281,7 +334,7 @@ footer a{color:#fff;font-weight:600}
     </div>
   </div>
 
-  <div class="center" style="margin-top:28px"><img src="img/glitter-2.jpg" alt="Para todas las edades: niñas, adolescentes y mamis" style="max-width:460px;width:100%;margin:auto;border-radius:28px;box-shadow:0 18px 40px rgba(139,61,255,.2)"></div>
+  <div class="center" style="margin-top:28px"><img src="img/glitter-2.jpg" alt="Para todas las edades: niñas, adolescentes y mamis" style="max-width:460px;width:100%;margin:auto;border-radius:28px;box-shadow:0 18px 40px rgba(138,2,40,.2)"></div>
   <h3 class="center" style="margin-top:46px;font-size:1.6rem">Lo que viene en Modo SPC</h3>
   <div class="coming">
     <div>🎨 Más talleres creativos</div>
