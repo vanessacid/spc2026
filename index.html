@@ -143,6 +143,8 @@ section[id],#glitter,#navidad{scroll-margin-top:68px}
 label small{font-weight:400;opacity:.75}
 .btn-big{padding:17px 34px;font-size:1.12rem}
 .hero-precio{width:min(400px,100%);filter:drop-shadow(0 8px 16px rgba(30,0,20,.35))}
+.price-picture{display:block;width:100%}
+.pay-methods{font-size:.9rem;background:#fff0f5;border-radius:14px;padding:12px 14px;margin-top:12px}
 .nav-det{list-style:none;text-align:left;max-width:520px;margin:2px 0;font-size:.97rem}
 .nav-det li{padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.25)}
 .nav-close{margin-top:26px}
@@ -190,6 +192,9 @@ label small{font-weight:400;opacity:.75}
  .day-mobile b{display:block;font-size:.96rem;line-height:1.2}
  .day-mobile span{display:block;font-size:.82rem;line-height:1.35;margin-top:3px}
  .agenda-notes{padding:17px;font-size:.9rem}
+ .hero-precio{width:min(310px,82vw);margin:auto}
+ .nav-price-repeat{display:none}
+ .precio-img{width:min(310px,100%)}
  input,select,textarea{font-size:16px}
 }
 /* info glitter */
@@ -241,7 +246,7 @@ footer a{color:#fff;font-weight:600}
         <img src="img/nav-horario.png" alt="De 9:00 a. m. a 4:00 p. m.">
         <img src="img/nav-lugar.png" alt="Hermandad Gallega de Venezuela (Caracas)">
       </div>
-      <img class="hero-precio" src="img/nav-precio.png" alt="Plan completo 5 días: 120 ref. pagando por Binance, 150 ref. en bolívares a tasa BCV">
+      <picture class="price-picture"><source media="(max-width:640px)" srcset="img/nav-precio-mobile.webp"><img class="hero-precio" src="img/nav-precio-horizontal.webp" alt="Plan completo de cinco días: 120 REF promo divisas; 150 REF en bolívares a tasa BCV"></picture>
       <div class="cta">
         <a class="btn btn-w btn-big" href="#navidad">¡Reservar mi cupo! 🎟️</a>
         <a class="btn btn-o" href="#glitter">Glitter Party · 27 nov ✨</a>
@@ -290,12 +295,13 @@ footer a{color:#fff;font-weight:600}
         <img src="img/nav-lugar.png" alt="Hermandad Gallega de Venezuela (Caracas)">
       </div>
       <p class="nav-txt">Vuelve la temporada navideña de SPC: un espacio para que las chicas disfruten sus vacaciones, hagan amigas y compartan experiencias juntas.</p>
-      <img class="nav-precio" src="img/nav-precio.png" alt="Plan completo 5 días: 120 ref. pagando por Binance, 150 ref. en bolívares a tasa BCV">
+      <picture class="price-picture nav-price-repeat"><img class="nav-precio" src="img/nav-precio-horizontal.webp" alt="Plan completo de cinco días: 120 REF promo divisas; 150 REF en bolívares a tasa BCV"></picture>
       <ul class="nav-det">
         <li>✅ <b>Plan completo de 5 días</b>: 17, 18, 21, 22 y 23 de diciembre</li>
         <li>🕘 De <b>9:00 a. m. a 4:00 p. m.</b></li>
         <li>📍 <b>Hermandad Gallega de Venezuela (Caracas)</b></li>
-        <li>💸 <b>120 Ref.</b> pagando por Binance · <b>150 Ref.</b> en Bs a tasa BCV</li>
+        <li>💸 <b>120 REF. · promo divisas:</b> efectivo en divisas, Binance o Wise</li>
+        <li>💳 <b>150 REF.</b> en bolívares a tasa BCV (pago móvil)</li>
         <li>🏛️ Socias y no socias de la Hermandad Gallega son bienvenidas</li>
       </ul>
       <div class="nav-cta">
@@ -342,7 +348,7 @@ footer a{color:#fff;font-weight:600}
   <div class="center">
     <div class="kicker">Inscripciones</div>
     <h2>Reserva tu cupo 🎟️</h2>
-    <p class="lead">Elige la actividad, llena el formulario y te llega un correo con los datos de pago. Con el comprobante, tu cupo queda reservado.</p>
+    <p class="lead">Elige la actividad y llena el formulario. Te indicaremos cómo pagar según el método seleccionado; con el pago confirmado, tu cupo queda reservado.</p>
   </div>
   <div class="tabs">
     <button class="tab on" data-t="navidad" type="button" aria-controls="p-navidad" aria-pressed="true">🎄 SPC Navidad<small>17–23 dic · plan completo</small></button>
@@ -357,15 +363,16 @@ footer a{color:#fff;font-weight:600}
         <div>🕘 <b>9:00 a. m. a 4:00 p. m.</b></div>
         <div>📍 <b>Hermandad Gallega de Venezuela</b><br><small>Caracas</small></div>
       </div>
-      <img class="precio-img" src="img/nav-precio.png" alt="Plan completo 5 días: 120 ref. Binance o 150 ref. en Bs a tasa BCV">
-      <p class="small">Precios regulares del plan completo (5 días). Con el pago en Bs se calcula a la tasa BCV del día.</p>
+      <picture class="price-picture"><source media="(max-width:640px)" srcset="img/nav-precio-mobile.webp"><img class="precio-img" src="img/nav-precio-horizontal.webp" alt="Plan completo de cinco días: 120 REF promo divisas; 150 REF en bolívares a tasa BCV"></picture>
+      <p class="pay-methods"><b>Formas de pago:</b> la promo de 120 REF. aplica al pagar en efectivo en divisas, por Binance o por Wise. En bolívares, el precio es 150 REF. calculados a la tasa BCV del día mediante pago móvil.</p>
+      <p class="small">Precios del plan completo (5 días). Selecciona tu forma de pago al inscribirte.</p>
     </div>
     <div class="info">
       <h4>Antes de inscribirte 💖</h4>
       <div class="it"><span class="e">🎄</span><div><b>¿Qué es?</b><br>Vuelve la temporada navideña de SPC: un espacio para que las chicas disfruten sus vacaciones, hagan amigas y compartan experiencias juntas.</div></div>
       <div class="it"><span class="e">🎟️</span><div><b>Socias y no socias son bienvenidas</b><br>Pueden participar las socias de la Hermandad Gallega y también las que no lo son.</div></div>
       <div class="it warn"><span class="e">🪪</span><div><b>Datos para el ingreso (no socias)</b><br>Cada niña puede entrar con <b>hasta 2 representantes</b>. Al elegir <i>"No"</i> en la pregunta de socios, te pediremos nombre y cédula de quienes vayan a ingresar para registrarlos en el acceso al club.</div></div>
-      <div class="it"><span class="e">💸</span><div><b>¿Cómo se reserva?</b><br>1) Llenas el formulario. 2) Te llega un correo con los datos de pago. 3) Respondes ese correo con el comprobante. 4) Con el pago confirmado, el cupo queda reservado.</div></div>
+      <div class="it"><span class="e">💸</span><div><b>¿Cómo se reserva?</b><br>1) Llenas el formulario y eliges cómo pagar. 2) Te enviamos las indicaciones correspondientes. Si eliges Wise o efectivo, coordinamos contigo por WhatsApp. 3) Con el pago confirmado, el cupo queda reservado.</div></div>
       <p class="fin">Cuando estés lista, llena el formulario 👇</p>
     </div>
     <form id="f-navidad">
@@ -399,13 +406,13 @@ footer a{color:#fff;font-weight:600}
         </div>
         <div class="row">
           <div><label>🏊 ¿Sabe nadar? *</label><select name="nadar" required><option value="">Selecciona…</option><option>Sí</option><option>No</option></select></div>
-          <div><label>💳 Forma de pago *</label><select name="pago" required><option value="">Selecciona…</option><option>Bs - Pago móvil (150 Ref. a tasa BCV)</option><option>Binance (120 Ref.)</option></select></div>
+          <div><label>💳 Forma de pago *</label><select name="pago" required><option value="">Selecciona…</option><option value="Promo divisas - Efectivo (Binance)">Efectivo en divisas · 120 REF.</option><option value="Binance (120 Ref.)">Binance · 120 REF.</option><option value="Promo divisas - Wise (Binance)">Wise · 120 REF.</option><option value="Bs - Pago móvil (150 Ref. a tasa BCV)">Pago móvil en bolívares · 150 REF. a tasa BCV</option></select><small>Para efectivo o Wise, te confirmaremos los datos específicos antes de pagar.</small></div>
         </div>
         <div><label>⚕️ Alergias o indicaciones médicas * <small>(si no tiene, escribe "Ninguna")</small></label><textarea name="alergias" rows="2" required></textarea></div>
         <input type="hidden" name="actividad" value="SPC Navidad">
         <input type="hidden" name="plan" value="Plan completo · 5 días">
         <button class="btn btn-p btn-big" type="submit">¡Reservar mi cupo! 🎟️</button>
-        <div class="msg" id="ok-navidad">¡Listo! Recibimos tu inscripción. Revisa tu correo (y la carpeta de spam): te enviamos los datos de pago. Con el comprobante, el cupo queda reservado. ✨</div>
+        <div class="msg" id="ok-navidad">¡Listo! Recibimos tu inscripción. Revisa tu correo para las indicaciones de pago. Con el pago confirmado, el cupo queda reservado. ✨</div>
       </form>
   </div>
 
@@ -588,6 +595,8 @@ function wire(id, okId){
     f.querySelector('.error')?.remove();
     try{
       await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(d)});
+      if(id==='f-navidad' && /Wise|Efectivo/.test(d.pago))
+        document.getElementById(okId).textContent='¡Listo! Recibimos tu inscripción. Te contactaremos por WhatsApp para coordinar el pago por '+(/Wise/.test(d.pago)?'Wise':'efectivo en divisas')+'. Con el pago confirmado, el cupo queda reservado. ✨';
       document.getElementById(okId).style.display='block';
     }catch(_){
       const msg=document.createElement('p');
