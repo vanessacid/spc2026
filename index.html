@@ -120,6 +120,33 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink)}
 .hero-txt{align-items:center}.hero.xmas .cta{justify-content:center}
 .hero-doll img{width:min(250px,62vw)}
 }
+/* reserva */
+section[id],#glitter,#navidad{scroll-margin-top:68px}
+.reserva{background:var(--lav)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:28px 0 18px}
+.tab{border:2px solid #f2c3d3;background:#fff;border-radius:20px;padding:14px 10px;font:700 1.02rem Poppins,sans-serif;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;gap:2px;align-items:center}
+.tab small{font-weight:500;font-size:.74rem;opacity:.75}
+.tab.on{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(138,2,40,.3)}
+.panel{display:none;background:#fff;border-radius:28px;padding:26px;box-shadow:0 18px 40px rgba(138,2,40,.15)}
+.panel.on{display:block}
+@media(max-width:600px){.panel{padding:18px}}
+.resumen h3{font-size:1.5rem;margin-bottom:12px;color:var(--purple)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:700px){.rgrid{grid-template-columns:1fr}}
+.rgrid div{background:var(--soft);border:2px solid #ffc9dc;border-radius:16px;padding:12px;font-size:.95rem}
+.precio-img{width:min(520px,100%);margin:14px auto 4px}
+.resumen .small{font-size:.8rem;text-align:center;opacity:.8}
+.gprice{margin-top:12px;background:#fff7c2;border:1px dashed #c9a400;border-radius:14px;padding:12px;font-size:1rem}
+.panel .info{margin-top:16px}
+.panel form{margin-top:18px}
+.ingreso{background:var(--soft);border:2px solid var(--pink);border-radius:16px;padding:14px}
+label small{font-weight:400;opacity:.75}
+.btn-big{padding:17px 34px;font-size:1.12rem}
+.hero-precio{width:min(400px,100%);filter:drop-shadow(0 8px 16px rgba(30,0,20,.35))}
+.nav-det{list-style:none;text-align:left;max-width:520px;margin:2px 0;font-size:.97rem}
+.nav-det li{padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.25)}
+.nav-close{margin-top:26px}
+.nav-close p{font-size:.95rem}.nav-close a{color:#fff;font-weight:700}
 /* navidad */
 .navidad{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:center;margin-top:38px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.22);border-radius:34px;padding:34px}
 @media(max-width:860px){.navidad{grid-template-columns:1fr;padding:22px}.nav-doll{order:-1}}
@@ -134,26 +161,6 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink)}
 .nav-close h3{font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:6px}
 .nav-close .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0 8px}
 .nav-close .small{font-size:.9rem;opacity:.85}
-.xmas-details{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px auto;max-width:940px}
-.xmas-details article{background:#fff;color:var(--ink);border-radius:20px;padding:18px;text-align:center}
-.xmas-details b{display:block;font-size:1.35rem;color:#89052d}
-.xmas-details span{font-size:.88rem}
-.agenda{max-width:920px;margin:45px auto 0}
-.agenda h3{text-align:center;font-size:2rem}
-.agenda p{text-align:center;margin:8px auto 22px;max-width:680px}
-.agenda-list{display:grid;gap:4px}
-.agenda-list img{width:100%;height:auto}
-.xmas-notes{max-width:860px;margin:22px auto 0;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:20px 24px;border-radius:20px}
-.xmas-notes ul{padding-left:20px;margin-top:8px}
-.xmas-notes li{margin:5px 0}
-.booking{background:#fff4f7}
-.booking-card{max-width:800px;margin:25px auto 0;padding:28px;border-radius:28px;background:#fff;box-shadow:0 18px 45px rgba(138,2,40,.15)}
-.booking-tabs{display:flex;gap:10px;flex-wrap:wrap}
-.booking-tabs button{font:inherit;font-weight:700;border:2px solid #eeb8d1;background:#fff;border-radius:999px;padding:11px 20px;cursor:pointer;color:var(--ink)}
-.booking-tabs button[aria-selected="true"]{background:#930633;border-color:#930633;color:#fff}
-.booking-context{background:#fff0f5;border-radius:16px;padding:14px;margin:16px 0 2px}
-.booking .row>div{min-width:0}
-@media(max-width:700px){.xmas-details{grid-template-columns:1fr}.booking-card{padding:19px}.agenda{margin-top:34px}}
 /* info glitter */
 .info{background:var(--soft);border:2px solid #ffc9dc;border-radius:22px;padding:20px;margin:18px 0 6px}
 .info h4{font-family:"Baloo 2",Poppins,sans-serif;font-size:1.35rem;margin-bottom:10px;color:var(--purple)}
@@ -189,7 +196,7 @@ footer a{color:#fff;font-weight:600}
     <li><a href="#party">SPC Party</a></li>
     <li><a href="#galeria">Galería</a></li>
   </ul>
-  <a class="btn btn-p" href="#plan">Navidad 🎄</a>
+  <a class="btn btn-p" href="#navidad">Reservar cupo 🎟️</a>
 </div></nav>
 
 <header class="hero xmas" id="inicio">
@@ -203,8 +210,9 @@ footer a{color:#fff;font-weight:600}
         <img src="img/nav-horario.png" alt="De 9:00 a. m. a 4:00 p. m.">
         <img src="img/nav-lugar.png" alt="Hermandad Gallega de Venezuela (Caracas)">
       </div>
+      <img class="hero-precio" src="img/nav-precio.png" alt="Plan completo 5 días: 120 ref. pagando por Binance, 150 ref. en bolívares a tasa BCV">
       <div class="cta">
-        <a class="btn btn-w" href="#inscripcion" data-book="navidad">Reserva tu cupo 🎄</a>
+        <a class="btn btn-w btn-big" href="#navidad">¡Reservar mi cupo! 🎟️</a>
         <a class="btn btn-o" href="#glitter">Glitter Party · 27 nov ✨</a>
       </div>
     </div>
@@ -250,83 +258,111 @@ footer a{color:#fff;font-weight:600}
         <img src="img/nav-horario.png" alt="De 9:00 a. m. a 4:00 p. m.">
         <img src="img/nav-lugar.png" alt="Hermandad Gallega de Venezuela (Caracas)">
       </div>
-      <p class="nav-txt">Cinco jornadas para niñas de 4 a 14 años, con retos, amigas, cocina, cine y una fiesta de cierre.</p>
+      <p class="nav-txt">Vuelve la temporada navideña de SPC: un espacio para que las chicas disfruten sus vacaciones, hagan amigas y compartan experiencias juntas.</p>
       <img class="nav-precio" src="img/nav-precio.png" alt="Plan completo 5 días: 120 ref. pagando por Binance, 150 ref. en bolívares a tasa BCV">
+      <ul class="nav-det">
+        <li>✅ <b>Plan completo de 5 días</b>: 17, 18, 21, 22 y 23 de diciembre</li>
+        <li>🕘 De <b>9:00 a. m. a 4:00 p. m.</b></li>
+        <li>📍 <b>Hermandad Gallega de Venezuela (Caracas)</b></li>
+        <li>💸 <b>120 Ref.</b> pagando por Binance · <b>150 Ref.</b> en Bs a tasa BCV</li>
+        <li>🏛️ Socias y no socias de la Hermandad Gallega son bienvenidas</li>
+      </ul>
       <div class="nav-cta">
-        <a class="btn btn-w" href="#inscripcion" data-book="navidad">Reserva tu cupo 🎄</a>
+        <a class="btn btn-w btn-big" href="#navidad">¡Reservar mi cupo! 🎟️</a>
       </div>
     </div>
     <div class="nav-doll"><img src="img/nav-muneca.webp" alt="Chica SPC con gorro navideño y un regalo" loading="lazy"></div>
   </div>
 
-  <div class="xmas-details" aria-label="Datos del plan navideño">
-    <article><b>17, 18, 21, 22 y 23</b><span>de diciembre de 2026 · cinco días</span></article>
-    <article><b>9:00 a. m. – 4:00 p. m.</b><span>Horario de las jornadas diurnas</span></article>
-    <article><b>Hermandad Gallega</b><span>de Venezuela · Caracas</span></article>
-  </div>
-  <div class="xmas-details" aria-label="Precios del plan completo" style="grid-template-columns:repeat(2,1fr)">
-    <article><b>120 ref.</b><span>Plan completo de cinco días · pago por Binance</span></article>
-    <article><b>150 ref.</b><span>Plan completo de cinco días · pago en bolívares a tasa BCV</span></article>
-  </div>
-  <div class="agenda">
-    <h3>Así se vive la semana ✨</h3>
-    <p>Un tema distinto cada día. La programación puede ajustarse según las actividades y el grupo.</p>
-    <div class="agenda-list">
-      <img src="img/agenda/jueves-17.webp" alt="Jueves 17: Arranca la Navidad. Retos y carrera de envolver regalos" loading="lazy">
-      <img src="img/agenda/viernes-18.webp" alt="Viernes 18: Pijamas, spa y cine. De noche, pijamada y Espíritu de la Navidad" loading="lazy">
-      <img src="img/agenda/lunes-21.webp" alt="Lunes 21: Chef navideñas. Decoramos galletas de jengibre" loading="lazy">
-      <img src="img/agenda/martes-22.webp" alt="Martes 22: El Grinch contra SPC. Misiones e Improchicas navideña" loading="lazy">
-      <img src="img/agenda/miercoles-23.webp" alt="Miércoles 23: Glitter Party. Maquillaje, manualidades y sorpresas" loading="lazy">
-    </div>
-  </div>
-  <div class="xmas-notes">
-    <b>Para preparar su semana</b>
-    <ul>
-      <li>Trae hidratación, ropa cómoda y almuerzo para cada jornada. Compartiremos las indicaciones específicas de cada tema con las familias inscritas.</li>
-      <li>El viernes 18 tendremos pijamada nocturna para celebrar el Espíritu de la Navidad. El horario nocturno y las indicaciones de esa actividad se comunicarán por separado.</li>
-      <li>Si hay alergias alimentarias o alguna indicación médica, cuéntanoslo en la inscripción, especialmente para el día de galletas.</li>
-    </ul>
-  </div>
   <div class="nav-close">
-    <h3>¿Tu chica se viene a vivir la Navidad con SPC? 🎁</h3>
-    <p>Completa el formulario y elige <b>SPC Navidad</b>. Te enviaremos los datos de pago para confirmar el cupo.</p>
-    <div class="cta"><a class="btn btn-w" href="#inscripcion" data-book="navidad">Reserva tu cupo</a></div>
-    <p class="small">¿Tienes alguna duda? WhatsApp <a href="https://wa.me/584122192602">+58 412 219 2602</a></p>
+    <p>¿Dudas? Escríbenos por WhatsApp <a href="https://wa.me/584122192602" target="_blank" rel="noopener">+58 412 219 2602</a> · <a href="mailto:plansoloparachicas@gmail.com">plansoloparachicas@gmail.com</a></p>
   </div>
 
   <p class="center" style="margin-top:34px;opacity:.85;font-size:.92rem">☀️ Plan Vacacional Verano: agosto a septiembre · 8:00 a 16:00 · cierre con Show Final. Las inscripciones del verano 2026 ya cerraron. ¡Prepárate para el próximo!</p>
 </div></section>
 
-<section class="modo" id="modo"><div class="wrap">
-  <div class="split">
-    <div>
-      <img src="img/logo-modo.jpg" alt="Modo SPC" style="width:190px;border-radius:24px;margin-bottom:14px">
-      <div class="kicker">Durante todo el año</div>
-      <h2>Modo SPC: la magia no se acaba</h2>
-      <p class="lead">Actividades, eventos y fiestas: talleres creativos, day camps y encuentros especiales para que las chicas sigan juntas entre vacaciones. Cada mes, una nueva experiencia.</p>
-    </div>
-    <div class="center"><video src="img/modo-spc.mp4" poster="img/modo-poster.jpg" autoplay muted loop playsinline controls preload="metadata" style="width:100%;max-width:300px;border-radius:28px;box-shadow:0 18px 40px rgba(138,2,40,.35)"></video></div>
+<section class="reserva" id="inscripcion"><div id="navidad"></div><div id="glitter"></div><div class="wrap" style="max-width:860px">
+  <div class="center">
+    <div class="kicker">Inscripciones</div>
+    <h2>Reserva tu cupo 🎟️</h2>
+    <p class="lead">Elige la actividad, llena el formulario y te llega un correo con los datos de pago. Con el comprobante, tu cupo queda reservado.</p>
+  </div>
+  <div class="tabs">
+    <button class="tab on" data-t="navidad" type="button">🎄 SPC Navidad<small>17–23 dic · plan completo</small></button>
+    <button class="tab" data-t="glitter" type="button">💎 Glitter Party<small>Vie 27 nov · taller</small></button>
   </div>
 
-  <div class="center" style="margin-top:34px"><img src="img/glitter-1.jpg" alt="Glitter Party - Taller creativo, viernes 27 de noviembre, Hermandad Gallega de Caracas" style="max-width:460px;width:100%;margin:auto;border-radius:28px;box-shadow:0 18px 40px rgba(138,2,40,.25)"></div>
-  <div class="event" id="glitter" style="margin-top:28px">
-    <div class="l">
-      <span class="tag" style="align-self:flex-start">Vie 27 de noviembre · Cupos limitados</span>
-      <h3>Glitter Party ✨</h3>
-      <p>Un taller creativo lleno de brillo, color y mucha amistad. Crea, decora y llévate algo hecho por ti.</p>
+  <div class="panel on" id="p-navidad">
+    <div class="resumen">
+      <h3>Plan Vacacional Solo Para Chicas en Navidad 🎄</h3>
+      <div class="rgrid">
+        <div>📅 <b>17, 18, 21, 22 y 23 de diciembre</b><br><small>5 días</small></div>
+        <div>🕘 <b>9:00 a. m. a 4:00 p. m.</b></div>
+        <div>📍 <b>Hermandad Gallega de Venezuela</b><br><small>Caracas</small></div>
+      </div>
+      <img class="precio-img" src="img/nav-precio.png" alt="Plan completo 5 días: 120 ref. Binance o 150 ref. en Bs a tasa BCV">
+      <p class="small">Precios regulares del plan completo (5 días). Con el pago en Bs se calcula a la tasa BCV del día.</p>
     </div>
-    <div class="r">
-      <h3 style="font-size:1.5rem">Datos del taller</h3>
-      <ul>
-        <li>📅 Viernes 27 de noviembre</li>
-        <li>🕑 5:30 a 7:00 pm</li>
-        <li>📍 Hermandad Gallega de Caracas</li>
-        <li>👧 Niñas, adolescentes y mamis · a partir de 4 años</li>
-        <li>💸 Pago en Bs (tasa BCV): socias <b>$30</b> · no socias <b>$35</b></li>
-        <li>🪙 <b>Promo pago con Binance:</b> socias <b>$25</b> · no socias <b>$30</b></li>
-      </ul>
+    <div class="info">
+      <h4>Antes de inscribirte 💖</h4>
+      <div class="it"><span class="e">🎄</span><div><b>¿Qué es?</b><br>Vuelve la temporada navideña de SPC: un espacio para que las chicas disfruten sus vacaciones, hagan amigas y compartan experiencias juntas.</div></div>
+      <div class="it"><span class="e">🎟️</span><div><b>Socias y no socias son bienvenidas</b><br>Pueden participar las socias de la Hermandad Gallega y también las que no lo son.</div></div>
+      <div class="it warn"><span class="e">🪪</span><div><b>Datos para el ingreso (no socias)</b><br>Cada niña puede entrar con <b>2 representantes</b>. Al elegir <i>"No"</i> en la pregunta de socios, te pediremos nombre y cédula de ambos para dejarlos registrados en el acceso al club.</div></div>
+      <div class="it"><span class="e">💸</span><div><b>¿Cómo se reserva?</b><br>1) Llenas el formulario. 2) Te llega un correo con los datos de pago. 3) Respondes ese correo con el comprobante. 4) Con el pago confirmado, el cupo queda reservado.</div></div>
+      <p class="fin">Cuando estés lista, llena el formulario 👇</p>
+    </div>
+    <form id="f-navidad">
+        <div class="row">
+          <div><label>✨ Nombre completo de la participante *</label><input name="nina" required></div>
+          <div><label>🪪 Cédula de la niña * <small>(si no tiene, la del representante)</small></label><input name="cedulaNina" required></div>
+        </div>
+        <div class="row">
+          <div><label>🎂 Fecha de nacimiento *</label><input name="fechaNac" type="date" required></div>
+          <div><label>👧 Edad *</label><input name="edad" type="number" min="3" max="17" required></div>
+        </div>
+        <div class="row">
+          <div><label>👤 Nombre del representante *</label><input name="representante" required></div>
+          <div><label>🪪 Cédula del representante * <small>(V o E al inicio)</small></label><input name="cedulaRep" required></div>
+        </div>
+        <div><label>📧 Correo electrónico *</label><input name="correo" type="email" required></div>
+        <div class="row">
+          <div><label>📱 Teléfono 1 (WhatsApp) *</label><input name="telefono" type="tel" required></div>
+          <div><label>📱 Teléfono 2 *</label><input name="telefono2" type="tel" required></div>
+        </div>
+        <div class="row">
+          <div><label>🏛️ ¿Son socios de la Hermandad Gallega? *</label>
+            <select name="socios" class="socio-sel" required><option value="">Selecciona…</option><option>Sí</option><option>No</option></select></div>
+          <div class="socio-num" style="display:none"><label>🔢 N° de socio *</label><input name="numSocio" data-req></div>
+        </div>
+        <div class="ingreso" style="display:none">
+          <b>🏛️ Datos para el ingreso al club (no socias)</b>
+          <p style="font-size:.84rem;margin:4px 0 10px">Indica el nombre completo y la cédula de los <b>2 representantes</b> que ingresarán al club con la niña.</p>
+          <div class="row"><div><label>👤 Representante 1 — nombre completo *</label><input name="rep1n" data-req></div><div><label>🪪 Representante 1 — cédula *</label><input name="rep1c" data-req></div></div>
+          <div class="row" style="margin-top:8px"><div><label>👤 Representante 2 — nombre completo *</label><input name="rep2n" data-req></div><div><label>🪪 Representante 2 — cédula *</label><input name="rep2c" data-req></div></div>
+        </div>
+        <div class="row">
+          <div><label>🏊 ¿Sabe nadar? *</label><select name="nadar" required><option value="">Selecciona…</option><option>Sí</option><option>No</option></select></div>
+          <div><label>💳 Forma de pago *</label><select name="pago" required><option value="">Selecciona…</option><option>Bs - Pago móvil (150 Ref. a tasa BCV)</option><option>Binance (120 Ref.)</option></select></div>
+        </div>
+        <div><label>⚕️ Alergias o indicaciones médicas * <small>(si no tiene, escribe "Ninguna")</small></label><textarea name="alergias" rows="2" required></textarea></div>
+        <input type="hidden" name="actividad" value="SPC Navidad">
+        <input type="hidden" name="plan" value="Plan completo · 5 días">
+        <button class="btn btn-p btn-big" type="submit">¡Reservar mi cupo! 🎟️</button>
+        <div class="msg" id="ok-navidad">¡Listo! Recibimos tu inscripción. Revisa tu correo (y la carpeta de spam): te enviamos los datos de pago. Con el comprobante, el cupo queda reservado. ✨</div>
+      </form>
+  </div>
 
-      <div class="info">
+  <div class="panel" id="p-glitter">
+    <div class="resumen">
+      <h3>Glitter Party ✨ · Taller de Modo SPC</h3>
+      <div class="rgrid">
+        <div>📅 <b>Viernes 27 de noviembre</b></div>
+        <div>🕑 <b>5:30 a 7:00 pm</b></div>
+        <div>📍 <b>Hermandad Gallega de Caracas</b></div>
+      </div>
+      <p class="gprice">Pago en Bs (tasa BCV): socias <b>$30</b> · no socias <b>$35</b><br>🪙 Promo Binance: socias <b>$25</b> · no socias <b>$30</b></p>
+    </div>
+          <div class="info">
         <h4>Antes de inscribirte, lee esto 💖</h4>
 
         <div class="it"><span class="e">✨</span><div><b>¿Qué es Glitter Party?</b><br>Es el primer taller de <b>Modo SPC</b>, la parte de <b>Solo Para Chicas</b> que vive todo el año. Así las amigas del plan vacacional siguen juntas, con presencia y actividades también fuera de las vacaciones, y la magia de SPC no se acaba.</div></div>
@@ -345,9 +381,70 @@ footer a{color:#fff;font-weight:600}
 
         <div class="it"><span class="e">💸</span><div><b>¿Cómo se paga?</b><br>Al inscribirte te llega un <b>correo con los datos de pago</b> (pago móvil en Bs a tasa BCV o Binance con promo). Envías el comprobante respondiendo ese correo y el cupo queda reservado. <b>Los cupos son limitados.</b></div></div>
 
-        <p class="fin"><a href="#inscripcion" data-book="glitter">Reserva tu cupo en el formulario 👇</a></p>
+        <p class="fin">Cuando estés lista, llena el formulario 👇</p>
       </div>
-      <a class="btn btn-p" href="#inscripcion" data-book="glitter" style="margin-top:16px">Reservar Glitter Party ✨</a>
+    <form id="f-glitter">
+        <div class="row">
+          <div><label>Nombre de la niña</label><input name="nina" required></div>
+          <div><label>Edad</label><input name="edad" type="number" min="3" max="16" required></div>
+        </div>
+        <div class="row">
+          <div><label>Representante</label><input name="representante" required></div>
+          <div><label>WhatsApp</label><input name="telefono" type="tel" required></div>
+        </div>
+        <div><label>Correo</label><input name="correo" type="email" required></div>
+        <div class="row">
+          <div><label>¿Es socia de la Hermandad Gallega?</label>
+            <select name="socios" class="socio-sel" required><option value="">Selecciona…</option><option>Sí</option><option>No</option></select></div>
+          <div class="socio-num" style="display:none"><label>N° de socio</label><input name="numSocio"></div>
+        </div>
+        <div><label>Forma de pago</label>
+          <select name="pago" required><option value="">Selecciona…</option><option>Bs - Pago móvil (tasa BCV)</option><option>Binance (promo)</option></select></div>
+        <div class="ingreso" style="display:none;background:#fff0fa;border-radius:16px;padding:14px">
+          <label>Si no son socias: datos para el ingreso (máximo 3 personas por inscripción)</label>
+          <div class="row" style="margin-top:8px"><input name="ing1n" data-req placeholder="Nombre y apellido 1"><input name="ing1c" data-req placeholder="Cédula 1"></div>
+          <div class="row" style="margin-top:8px"><input name="ing2n" placeholder="Nombre y apellido 2 (opcional)"><input name="ing2c" placeholder="Cédula 2"></div>
+          <div class="row" style="margin-top:8px"><input name="ing3n" placeholder="Nombre y apellido 3 (opcional)"><input name="ing3c" placeholder="Cédula 3"></div>
+        </div>
+        <div><label>Alergias o algo que debamos saber (opcional)</label><input name="alergias"></div>
+        <input type="hidden" name="actividad" value="Modo SPC - Glitter Party">
+        <button class="btn btn-p" type="submit">¡Reservar mi cupo! 💖</button>
+        <div class="msg" id="ok-glitter">¡Listo! Recibimos tu inscripción. Revisa tu correo (y la carpeta de spam): te enviamos toda la información y los datos de pago. ✨</div>
+      </form>
+  </div>
+</div></section>
+
+
+<section class="modo" id="modo"><div class="wrap">
+  <div class="split">
+    <div>
+      <img src="img/logo-modo.jpg" alt="Modo SPC" style="width:190px;border-radius:24px;margin-bottom:14px">
+      <div class="kicker">Durante todo el año</div>
+      <h2>Modo SPC: la magia no se acaba</h2>
+      <p class="lead">Actividades, eventos y fiestas: talleres creativos, day camps y encuentros especiales para que las chicas sigan juntas entre vacaciones. Cada mes, una nueva experiencia.</p>
+    </div>
+    <div class="center"><video src="img/modo-spc.mp4" poster="img/modo-poster.jpg" autoplay muted loop playsinline controls preload="metadata" style="width:100%;max-width:300px;border-radius:28px;box-shadow:0 18px 40px rgba(138,2,40,.35)"></video></div>
+  </div>
+
+  <div class="center" style="margin-top:34px"><img src="img/glitter-1.jpg" alt="Glitter Party - Taller creativo, viernes 27 de noviembre, Hermandad Gallega de Caracas" style="max-width:460px;width:100%;margin:auto;border-radius:28px;box-shadow:0 18px 40px rgba(138,2,40,.25)"></div>
+  <div class="event" id="glitter-info" style="margin-top:28px">
+    <div class="l">
+      <span class="tag" style="align-self:flex-start">Vie 27 de noviembre · Cupos limitados</span>
+      <h3>Glitter Party ✨</h3>
+      <p>Un taller creativo lleno de brillo, color y mucha amistad. Crea, decora y llévate algo hecho por ti.</p>
+    </div>
+    <div class="r">
+      <h3 style="font-size:1.5rem">Datos del taller</h3>
+      <ul>
+        <li>📅 Viernes 27 de noviembre</li>
+        <li>🕑 5:30 a 7:00 pm</li>
+        <li>📍 Hermandad Gallega de Caracas</li>
+        <li>👧 Niñas, adolescentes y mamis · a partir de 4 años</li>
+        <li>💸 Pago en Bs (tasa BCV): socias <b>$30</b> · no socias <b>$35</b></li>
+        <li>🪙 <b>Promo pago con Binance:</b> socias <b>$25</b> · no socias <b>$30</b></li>
+      </ul>
+
+      <div class="nav-cta" style="margin-top:18px"><a class="btn btn-p btn-big" href="#glitter">¡Reservar mi cupo! 🎟️</a></div>
     </div>
   </div>
 
@@ -359,52 +456,6 @@ footer a{color:#fff;font-weight:600}
     <div>🎁 Eventos especiales</div>
   </div>
   <p class="center" style="margin-top:14px">¿Quieres enterarte primero? <a href="#avisame" style="color:var(--purple);font-weight:700">Únete a la lista</a></p>
-</div></section>
-
-<section class="booking" id="inscripcion"><div class="wrap">
-  <div class="center"><div class="kicker">Inscripciones SPC</div><h2>Reserva tu cupo 💖</h2><p class="lead">Un solo formulario para elegir tu experiencia. Completa una inscripción por participante.</p></div>
-  <div class="booking-card">
-    <div class="booking-tabs" role="tablist" aria-label="Elige la actividad">
-      <button type="button" id="tab-navidad" role="tab" aria-selected="true" aria-controls="booking-context">SPC Navidad 🎄</button>
-      <button type="button" id="tab-glitter" role="tab" aria-selected="false" aria-controls="booking-context">Glitter Party ✨</button>
-    </div>
-    <p class="booking-context" id="booking-context">Plan completo · 17, 18, 21, 22 y 23 de diciembre · 120 ref. Binance / 150 ref. en Bs a tasa BCV.</p>
-    <form id="f-reserva">
-      <input type="hidden" name="actividad" id="actividad" value="SPC Navidad - Plan Vacacional">
-      <div class="row">
-        <div><label for="nina">Nombre completo de la participante</label><input id="nina" name="nina" autocomplete="name" required></div>
-        <div><label for="edad">Edad</label><input id="edad" name="edad" type="number" min="4" max="16" required></div>
-      </div>
-      <div id="campos-navidad">
-        <div class="row">
-          <div><label for="nacimiento">Fecha de nacimiento</label><input id="nacimiento" name="nacimiento" type="date" required></div>
-          <div><label for="nada">¿Sabe nadar?</label><select id="nada" name="nada" required><option value="">Selecciona…</option><option>Sí</option><option>No</option></select></div>
-        </div>
-      </div>
-      <div class="row">
-        <div><label for="representante">Nombre completo del representante</label><input id="representante" name="representante" required></div>
-        <div><label for="telefono">WhatsApp principal</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required></div>
-      </div>
-      <div class="row">
-        <div><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="email" required></div>
-        <div><label for="telefono2">Otro teléfono (opcional)</label><input id="telefono2" name="telefono2" type="tel"></div>
-      </div>
-      <div class="row">
-        <div><label for="socio-sel">¿Es socia de la Hermandad Gallega?</label><select name="socios" id="socio-sel" required><option value="">Selecciona…</option><option>Sí</option><option>No</option></select></div>
-        <div id="socio-num" hidden><label for="numSocio">N.º de socio</label><input id="numSocio" name="numSocio"></div>
-      </div>
-      <div><label for="pago">Forma de pago</label><select id="pago" name="pago" required><option value="">Selecciona…</option><option>Bs - Pago móvil (tasa BCV)</option><option>Binance</option></select></div>
-      <div id="ingreso" hidden style="background:#fff0fa;border-radius:16px;padding:14px">
-        <label>Para el ingreso de no socias: nombre y cédula de quienes ingresarán (hasta dos representantes)</label>
-        <div class="row" style="margin-top:8px"><input name="ing1n" aria-label="Nombre y apellido del primer representante" placeholder="Nombre y apellido 1"><input name="ing1c" aria-label="Cédula del primer representante" placeholder="Cédula 1"></div>
-        <div class="row" style="margin-top:8px"><input name="ing2n" aria-label="Nombre y apellido del segundo representante" placeholder="Nombre y apellido 2 (opcional)"><input name="ing2c" aria-label="Cédula del segundo representante" placeholder="Cédula 2 (opcional)"></div>
-      </div>
-      <div><label for="alergias">Alergias, indicaciones médicas o algo que debamos saber</label><textarea id="alergias" name="alergias" rows="2" placeholder="Si no hay indicaciones, puedes dejarlo en blanco"></textarea></div>
-      <button class="btn btn-p" type="submit">Enviar inscripción y reservar cupo</button>
-      <div class="msg" id="ok-reserva" role="status">Solicitud enviada. Te contactaremos para confirmar el cupo y compartir los datos de pago.</div>
-      <div class="msg" id="error-reserva" role="alert" style="background:#ffe9e9">No se pudo enviar. Comprueba tu conexión e inténtalo de nuevo.</div>
-    </form>
-  </div>
 </div></section>
 
 <section class="party" id="party"><div class="wrap">
@@ -440,7 +491,7 @@ footer a{color:#fff;font-weight:600}
 </div></section>
 
 <section class="grad" id="avisame" style="color:#fff"><div class="wrap" style="max-width:640px">
-  <div class="center"><h2>Sé la primera en enterarte 💌</h2><p class="lead">Nuevos talleres y fiestas. Déjanos tu contacto.</p></div>
+  <div class="center"><h2>Sé la primera en enterarte 💌</h2><p class="lead">Diciembre, nuevos talleres y fiestas. Déjanos tu contacto.</p></div>
   <form id="f-aviso" style="background:#fff;padding:24px;border-radius:26px;color:var(--ink)">
     <div><label>Tu nombre</label><input name="representante" required></div>
     <div class="row">
@@ -448,7 +499,7 @@ footer a{color:#fff;font-weight:600}
       <div><label>Correo</label><input name="correo" type="email" required></div>
     </div>
     <div><label>Me interesa</label>
-      <select name="actividad"><option>Modo SPC (talleres)</option><option>SPC Party</option><option>Próximo Plan Vacacional</option><option>Todo ✨</option></select></div>
+      <select name="actividad"><option>Plan Vacacional Diciembre</option><option>Modo SPC (talleres)</option><option>SPC Party</option><option>Todo ✨</option></select></div>
     <input type="hidden" name="nina" value="(lista de espera)">
     <button class="btn btn-p" type="submit">Avísame 💜</button>
     <div class="msg" id="ok-aviso">¡Anotada! Te avisaremos muy pronto. ✨</div>
@@ -465,6 +516,7 @@ footer a{color:#fff;font-weight:600}
 <a class="wa" href="https://wa.me/584122192602" target="_blank" rel="noopener">💬 WhatsApp</a>
 
 <script>
+// Pega aquí la URL /exec de tu Apps Script (cada redeploy genera una nueva)
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_bztE5zLGf6J1be2aQ_VE2kUibm0wD79rL-YpvqpIvisSKS71ifXNhNucj-HafETH/exec";
 function wire(id, okId){
   const f=document.getElementById(id);
@@ -472,51 +524,34 @@ function wire(id, okId){
     e.preventDefault();
     const d=Object.fromEntries(new FormData(f));
     d.fecha=new Date().toLocaleString('es-VE');
-    const submit=f.querySelector('button[type="submit"]');
-    submit.disabled=true;
     try{
-      await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(d)});
-      document.getElementById(okId).style.display='block';
-      document.getElementById('error-reserva')?.style.setProperty('display','none');
-      f.reset();
-    }catch(_){
-      const error=f.querySelector('#error-reserva');
-      if(error) error.style.display='block';
-    }finally{submit.disabled=false}
+      if(SCRIPT_URL.startsWith('http')){
+        await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(d)});
+      }
+    }catch(_){}
+    f.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);
+    document.getElementById(okId).style.display='block';
   });
 }
-const booking=document.getElementById('f-reserva');
-function selectBooking(kind){
-  const christmas=kind==='navidad';
-  document.getElementById('actividad').value=christmas?'SPC Navidad - Plan Vacacional':'Modo SPC - Glitter Party';
-  document.getElementById('tab-navidad').setAttribute('aria-selected',String(christmas));
-  document.getElementById('tab-glitter').setAttribute('aria-selected',String(!christmas));
-  document.getElementById('booking-context').textContent=christmas
-    ?'Plan completo · 17, 18, 21, 22 y 23 de diciembre · 120 ref. Binance / 150 ref. en Bs a tasa BCV.'
-    :'Glitter Party · 27 de noviembre, 5:30 a 7:00 p. m. · Socias: 25 ref. Binance / 30 ref. Bs. No socias: 30 ref. Binance / 35 ref. Bs.';
-  document.getElementById('campos-navidad').hidden=!christmas;
-  document.getElementById('nacimiento').required=christmas;
-  document.getElementById('nada').required=christmas;
-  document.getElementById('edad').max=christmas?'14':'16';
-  document.querySelector('#pago option:last-child').textContent=christmas?'Binance':'Binance (promo)';
-  document.querySelector('#pago option:last-child').value=christmas?'Binance':'Binance (promo)';
-  document.getElementById('ok-reserva').style.display='none';
-  document.getElementById('error-reserva').style.display='none';
-}
-document.getElementById('tab-navidad').addEventListener('click',()=>selectBooking('navidad'));
-document.getElementById('tab-glitter').addEventListener('click',()=>selectBooking('glitter'));
-document.querySelectorAll('[data-book]').forEach(a=>a.addEventListener('click',()=>selectBooking(a.dataset.book)));
-document.getElementById('socio-sel').addEventListener('change',e=>{
-  const yes=e.target.value==='Sí', no=e.target.value==='No';
-  document.getElementById('socio-num').hidden=!yes;
-  document.getElementById('ingreso').hidden=!no;
-  document.getElementById('numSocio').required=yes;
-  booking.elements.ing1n.required=no;
-  booking.elements.ing1c.required=no;
+document.querySelectorAll('form').forEach(f=>{
+  const sel=f.querySelector('.socio-sel'); if(!sel) return;
+  sel.addEventListener('change',()=>{
+    const num=f.querySelector('.socio-num'), ing=f.querySelector('.ingreso');
+    const si=sel.value==='Sí', no=sel.value==='No';
+    if(num) num.style.display=si?'block':'none';
+    if(ing) ing.style.display=no?'block':'none';
+    f.querySelectorAll('.ingreso [data-req]').forEach(x=>x.required=no);
+    f.querySelectorAll('.socio-num [data-req]').forEach(x=>x.required=si);
+  });
 });
-booking.addEventListener('submit',()=>{document.getElementById('error-reserva').style.display='none'});
-wire('f-reserva','ok-reserva');wire('f-aviso','ok-aviso');
-selectBooking(location.hash==='#glitter'?'glitter':'navidad');
+function showTab(t){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+t));
+}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.t)));
+function fromHash(){ if(location.hash==='#glitter') showTab('glitter'); else if(location.hash==='#navidad') showTab('navidad'); }
+window.addEventListener('hashchange',fromHash); fromHash();
+wire('f-navidad','ok-navidad');wire('f-glitter','ok-glitter');wire('f-aviso','ok-aviso');
 </script>
 </body>
 </html>
