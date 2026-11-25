@@ -142,6 +142,10 @@ section[id],#glitter,#navidad{scroll-margin-top:68px}
 .promo-bf b{display:block;color:#9c083e;font-size:1.12rem}
 .promo-bf small{display:block;font-size:.84rem;line-height:1.4;margin-top:4px}
 .hero .promo-bf{background:#fff2f8}
+.promo-progress{width:min(520px,100%);margin:0 auto 14px;padding:12px 16px;border-radius:16px;background:#fff;color:var(--ink);box-shadow:0 6px 18px rgba(60,0,40,.12)}
+.promo-progress b{display:block;font-size:.94rem}
+.promo-progress progress{display:block;width:100%;height:16px;margin:9px 0 6px;accent-color:#d1104f}
+.promo-progress small{display:block;font-size:.8rem;line-height:1.4}
 .after-submit{display:none;margin-top:10px}
 .after-submit a{color:var(--purple);font-weight:700}
 .resumen .small{font-size:.8rem;text-align:center;opacity:.8}
@@ -252,6 +256,7 @@ footer a{color:#fff;font-weight:600}
       </div>
       <div class="prices" aria-label="Precios del plan completo de cinco días"><div class="price-card"><span>Socias</span><strong>130 USD</strong></div><div class="price-card"><span>No socias</span><strong>150 USD</strong></div></div>
       <div class="promo-bf bf-only"><b>🖤 Black Friday · 100 USD</b><small>Primeras 20 niñas inscritas y con pago confirmado en divisas. Promo hasta el 29 de noviembre o hasta agotar los 20 cupos.</small></div>
+      <div class="promo-progress bf-only" aria-live="polite"><b class="promo-count">Consultando cupos confirmados…</b><progress class="promo-meter" max="20" value="0" aria-label="Cupos promocionales con pago confirmado"></progress><small class="promo-update">El contador aumenta al verificar cada pago en divisas.</small></div>
       <div class="cta">
         <a class="btn btn-w btn-big" href="#navidad">¡Reservar mi cupo! 🎟️</a>
         <a class="btn btn-o" href="#glitter">Glitter Party · 27 nov ✨</a>
@@ -372,6 +377,7 @@ footer a{color:#fff;font-weight:600}
       </div>
       <div class="prices" aria-label="Precios del plan completo de cinco días"><div class="price-card"><span>Socias</span><strong>130 USD</strong></div><div class="price-card"><span>No socias</span><strong>150 USD</strong></div></div>
       <div class="promo-bf bf-only"><b>🖤 Promo Black Friday · 100 USD</b><small>Primeras 20 niñas inscritas y con pago confirmado en divisas. Hasta el 29 de noviembre o agotar los 20 cupos. Espera nuestra confirmación antes de pagar.</small></div>
+      <div class="promo-progress bf-only" aria-live="polite"><b class="promo-count">Consultando cupos confirmados…</b><progress class="promo-meter" max="20" value="0" aria-label="Cupos promocionales con pago confirmado"></progress><small class="promo-update">El contador aumenta al verificar cada pago en divisas.</small></div>
       <p class="pay-methods"><b>Formas de pago:</b> efectivo en divisas, Binance o Wise; también pago móvil en bolívares a tasa BCV del día. <span class="bf-only">La promo de 100 USD solo aplica a pagos en divisas.</span></p>
       <p class="small">Precios del plan completo (5 días). Te confirmaremos el monto y los datos de pago después de inscribirte.</p>
     </div>
@@ -594,14 +600,37 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_bztE5zLGf6J1be2aQ
 // La oferta Black Friday termina al finalizar el domingo en Caracas. El límite de 20 pagos se confirma manualmente.
 const caraDate = Object.fromEntries(new Intl.DateTimeFormat('en',{timeZone:'America/Caracas',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).map(({type,value})=>[type,value]));
 const blackFridayActive = `${caraDate.year}-${caraDate.month}-${caraDate.day}` <= '2026-11-29';
+let promoSoldOut=false;
 if(!blackFridayActive) document.querySelectorAll('.bf-only').forEach(el=>el.remove());
+async function updatePromoProgress(){
+  if(!blackFridayActive) return;
+  try{
+    const response=await fetch('promo-status.json?t='+Date.now(),{cache:'no-store'});
+    if(!response.ok) throw Error('Sin datos');
+    const data=await response.json();
+    if(!Number.isInteger(data.confirmed)||data.confirmed<0||data.confirmed>20||data.limit!==20) throw Error('Datos no válidos');
+    promoSoldOut=data.confirmed===20;
+    const updated=new Date(data.updated_at);
+    const fresh=!Number.isNaN(updated.getTime()) && Date.now()-updated.getTime()<3*60*60*1000;
+    document.querySelectorAll('.promo-count').forEach(el=>el.textContent=`${data.confirmed} de 20 cupos promocionales con pago confirmado`);
+    document.querySelectorAll('.promo-meter').forEach(el=>el.value=data.confirmed);
+    document.querySelectorAll('.promo-update').forEach(el=>el.textContent=data.confirmed===20?'Promoción agotada. Puedes inscribirte al precio regular.':fresh?'Actualizamos la barra al verificar los pagos. Te confirmamos por WhatsApp si entras en la promo.':'Última actualización: '+updated.toLocaleString('es-VE')+'. Confirma disponibilidad por WhatsApp antes de pagar.');
+    if(promoSoldOut) document.querySelectorAll('.promo-bf').forEach(el=>el.textContent='🖤 Promo Black Friday agotada · Siguen abiertas las inscripciones a precio regular.');
+    updateNavPrice();
+  }catch(_){
+    document.querySelectorAll('.promo-count').forEach(el=>el.textContent='Consulta los cupos promocionales por WhatsApp');
+    document.querySelectorAll('.promo-update').forEach(el=>el.textContent='Te confirmaremos la disponibilidad antes de pagar.');
+  }
+}
+updatePromoProgress();
+setInterval(updatePromoProgress,15*60*1000);
 const navForm=document.getElementById('f-navidad');
 function updateNavPrice(){
   const socio=navForm.elements.socios.value, pago=navForm.elements.pago.value;
   const status=document.getElementById('nav-price-selection');
   if(!socio){status.textContent='Selecciona si eres socia para ver el precio del plan completo.';return}
   const regular=socio==='Sí'?130:150;
-  status.textContent=`Precio regular: ${regular} USD (${socio==='Sí'?'socia':'no socia'}). ${pago.includes('Bs -')?'Pago en bolívares a tasa BCV del día.':pago?blackFridayActive?'Si hay lugar entre las primeras 20 inscripciones con pago confirmado en divisas, pagarás 100 USD; te lo confirmaremos antes de pagar.':'Te confirmaremos el monto antes de pagar.':'Selecciona una forma de pago.'}`;
+  status.textContent=`Precio regular: ${regular} USD (${socio==='Sí'?'socia':'no socia'}). ${pago.includes('Bs -')?'Pago en bolívares a tasa BCV del día.':pago?blackFridayActive&&!promoSoldOut?'Si hay lugar entre las primeras 20 inscripciones con pago confirmado en divisas, pagarás 100 USD; te lo confirmaremos antes de pagar.':'Te confirmaremos el monto antes de pagar.':'Selecciona una forma de pago.'}`;
 }
 navForm.elements.socios.addEventListener('change',updateNavPrice);
 navForm.elements.pago.addEventListener('change',updateNavPrice);
@@ -614,7 +643,7 @@ function wire(id, okId){
     d.fecha=new Date().toLocaleString('es-VE');
     if(id==='f-navidad'){
       d.precioRegular=d.socios==='Sí'?'130 USD':'150 USD';
-      d.promoBlackFriday=blackFridayActive && !d.pago.startsWith('Bs -')?'Solicita evaluación: 100 USD, primeros 20 pagos en divisas confirmados':'No aplica';
+      d.promoBlackFriday=blackFridayActive && !promoSoldOut && !d.pago.startsWith('Bs -')?'Solicita evaluación: 100 USD, primeros 20 pagos en divisas confirmados':'No aplica';
     }
     // Sheets interpreta 0412… como número y borra el cero inicial; la comilla conserva el texto.
     for(const campo of ['telefono','telefono2']) if(d[campo]) d[campo]="'"+d[campo].trim();
